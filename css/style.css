@@ -355,13 +355,12 @@ button {
     left: 0;
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: var(--space-2) var(--space-4);
     background: var(--surface);
     border-top: 1px solid var(--border);
-    gap: var(--space-2);
+    gap: var(--space-3);
     z-index: 998;
     box-sizing: border-box;
 }
@@ -377,21 +376,22 @@ button {
     display: none;
 }
 
-/* Language Switcher in Nav Actions */
+/* Language Switcher - Right Side */
 .language-switcher {
     display: flex;
     align-items: center;
-    gap: var(--space-1);
+    gap: 2px;
     background: var(--background);
-    padding: var(--space-1);
+    padding: 4px;
     border-radius: var(--radius-md);
+    order: 1;
 }
 
 .lang-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 44px;
+    min-width: 40px;
     min-height: 36px;
     font-size: 0.75rem;
     font-weight: 600;
