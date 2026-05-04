@@ -379,16 +379,16 @@ button {
 /* Language Switcher - Floating Right Side in Header */
 .language-switcher {
     position: fixed;
-    right: 0;
+    right: 0px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 8px;
     background: var(--surface);
-    padding: 8px;
+    padding: 12px 10px;
     border-radius: var(--radius-md);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     z-index: 1001;
 }
 
@@ -396,19 +396,21 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    font-size: 0.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 2.75rem;
     font-weight: 600;
     color: var(--text-secondary);
     text-decoration: none;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
+    transition: all var(--transition);
+    cursor: pointer;
 }
 
 .lang-btn:hover,
 .lang-btn.active {
-    background: var(--primary);
-    color: white;
+    background: var(--primary-light);
+    transform: scale(1.1);
 }
 
 .lang-divider {
@@ -678,7 +680,7 @@ button {
     /* Desktop Language */
     .language-switcher {
         position: fixed;
-        right: 20px;
+        right: 0px;
         top: 50%;
         transform: translateY(-50%);
         display: flex;
@@ -695,7 +697,7 @@ button {
         min-width: auto;
         height: auto;
         padding: var(--space-2) var(--space-3);
-        font-size: 0.875rem;
+        font-size: 2.75rem;
     }
     
     .lang-btn:hover,
@@ -1647,22 +1649,42 @@ button {
    Footer - Mobile First Interactive
    ======================================== */
 .footer {
-    background: var(--text-primary);
+    background: linear-gradient(135deg, var(--text-primary) 0%, #0a5a5d 100%);
     color: white;
     padding: var(--space-7) 0 var(--space-5);
     margin-top: var(--space-9);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: rgba(201, 162, 39, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
 .footer-main {
     display: flex;
     flex-direction: column;
-    gap: var(--space-6);
+    gap: var(--space-7);
     padding-bottom: var(--space-6);
+    position: relative;
+    z-index: 1;
 }
 
 /* Footer Brand */
 .footer-brand {
     text-align: center;
+    padding: var(--space-5);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(201, 162, 39, 0.2);
 }
 
 .footer-brand .logo {
@@ -1674,32 +1696,35 @@ button {
 }
 
 .footer-brand .logo-img {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
+    filter: brightness(1.1);
 }
 
 .footer-brand .logo-name {
     color: white;
-    font-size: 1.25rem;
+    font-size: 1.375rem;
+    font-weight: 700;
 }
 
 .footer-brand .logo-tagline {
     color: var(--secondary);
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
 .footer-brand > p {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.75);
     margin-bottom: var(--space-4);
-    line-height: 1.7;
-    font-size: 0.9375rem;
+    line-height: 1.8;
+    font-size: 0.95rem;
 }
 
 /* Social Links */
 .footer-social {
     display: flex;
     justify-content: center;
-    gap: var(--space-3);
+    gap: var(--space-4);
     margin-bottom: var(--space-5);
 }
 
@@ -1707,19 +1732,22 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: rgba(255, 255, 255, 0.1);
+    width: 48px;
+    height: 48px;
+    background: rgba(201, 162, 39, 0.15);
     border-radius: var(--radius-full);
-    color: white;
+    color: var(--secondary);
     font-size: 1.125rem;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     text-decoration: none;
+    border: 1px solid rgba(201, 162, 39, 0.3);
 }
 
 .social-link:hover {
-    background: var(--primary);
-    transform: translateY(-3px);
+    background: var(--secondary);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(201, 162, 39, 0.3);
 }
 
 /* Trust Badges */
@@ -1728,22 +1756,25 @@ button {
     justify-content: center;
     flex-wrap: wrap;
     gap: var(--space-3);
-    margin-bottom: var(--space-5);
+    margin-bottom: 0;
 }
 
 .footer-badge {
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.7);
-    padding: var(--space-2) var(--space-4);
-    background: rgba(255, 255, 255, 0.05);
+    font-size: 0.8rem;
+    color: white;
+    padding: var(--space-2) var(--space-3);
+    background: rgba(201, 162, 39, 0.15);
     border-radius: var(--radius-full);
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    font-weight: 500;
 }
 
 .footer-badge i {
     color: var(--secondary);
+    font-size: 0.9rem;
 }
 
 /* Footer Links Accordion Style */
@@ -1753,7 +1784,7 @@ button {
 }
 
 .footer-column {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(201, 162, 39, 0.2);
 }
 
 .footer-column:last-child {
@@ -1766,17 +1797,21 @@ button {
     justify-content: space-between;
     padding: var(--space-4) 0;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .footer-column h4 {
-    font-size: 1rem;
+    font-size: 1.05rem;
     margin: 0;
     color: white;
+    font-weight: 600;
+    letter-spacing: 0.3px;
 }
 
 .footer-column-arrow {
     color: var(--secondary);
-    transition: var(--transition);
+    transition: transform 0.3s ease;
+    font-size: 0.9rem;
 }
 
 .footer-column.active .footer-column-arrow {
@@ -1786,46 +1821,76 @@ button {
 .footer-column ul {
     display: none;
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--space-3);
     padding-bottom: var(--space-4);
 }
 
 .footer-column.active ul {
     display: flex;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .footer-column a {
     display: block;
     padding: var(--space-2) 0;
-    font-size: 0.9375rem;
-    color: rgba(255, 255, 255, 0.7);
-    transition: var(--transition);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    transition: all 0.3s ease;
     text-decoration: none;
+    position: relative;
+}
+
+.footer-column a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary);
+    transition: width 0.3s ease;
 }
 
 .footer-column a:hover {
-    color: var(--secondary);
+    color: white;
     padding-left: var(--space-2);
+}
+
+.footer-column a:hover::before {
+    width: 100%;
 }
 
 /* Newsletter */
 .footer-newsletter {
     text-align: center;
-    padding: var(--space-5);
-    background: rgba(255, 255, 255, 0.03);
+    padding: var(--space-6);
+    background: linear-gradient(135deg, rgba(201, 162, 39, 0.15) 0%, rgba(13, 115, 119, 0.15) 100%);
+    border: 1px solid rgba(201, 162, 39, 0.3);
     border-radius: var(--radius-lg);
     margin: var(--space-4) 0;
 }
 
 .footer-newsletter h4 {
-    font-size: 1rem;
+    font-size: 1.125rem;
     margin-bottom: var(--space-2);
     color: white;
+    font-weight: 600;
 }
 
 .footer-newsletter p {
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: var(--space-4);
 }
 
@@ -1838,49 +1903,61 @@ button {
     flex: 1;
     height: 48px;
     padding: 0 var(--space-4);
-    background: var(--surface);
+    background: rgba(255, 255, 255, 0.95);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     color: var(--text-primary);
     font-size: 0.9375rem;
+    transition: all 0.3s ease;
 }
 
 .newsletter-form input::placeholder {
     color: var(--text-secondary);
 }
 
+.newsletter-form input:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.1);
+}
+
 .newsletter-form button {
     height: 48px;
     min-width: 48px;
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, #0a5a5d 100%);
     color: white;
     border: none;
     border-radius: var(--radius-md);
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .newsletter-form button:hover {
-    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 115, 119, 0.4);
 }
 
 /* Footer Bottom */
 .footer-bottom {
     padding-top: var(--space-5);
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(201, 162, 39, 0.2);
 }
 
 .footer-bottom p {
-    font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: var(--space-2);
+    letter-spacing: 0.3px;
 }
 
 .footer-disclaimer {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.6);
     max-width: 100%;
+    font-style: italic;
 }
 
 /* Desktop Footer */
@@ -2105,7 +2182,7 @@ button {
     /* Desktop language switcher */
     .language-switcher {
         position: fixed;
-        right: 20px;
+        right: 0px;
         top: 50%;
         transform: translateY(-50%);
         flex-direction: column;
@@ -2211,7 +2288,7 @@ button {
     
     .language-switcher {
         position: fixed;
-        right: 20px;
+        right: 0px;
         top: 50%;
         transform: translateY(-50%);
     }
@@ -2563,13 +2640,13 @@ button {
     
     .language-switcher {
         position: fixed;
-        right: 20px;
+        right: 0px;
         top: 50%;
         transform: translateY(-50%);
     }
     
     .lang-btn {
-        font-size: 0.75rem;
+        font-size: 2.75rem;
         padding: var(--space-1);
     }
     
