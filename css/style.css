@@ -376,15 +376,20 @@ button {
     display: none;
 }
 
-/* Language Switcher - Right Side */
+/* Language Switcher - Floating Right Side in Header */
 .language-switcher {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
     gap: 2px;
-    background: var(--background);
+    background: var(--surface);
     padding: 4px;
     border-radius: var(--radius-md);
-    order: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1001;
 }
 
 .lang-btn {
