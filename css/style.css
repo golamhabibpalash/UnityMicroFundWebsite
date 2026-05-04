@@ -438,10 +438,172 @@ button {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Desktop Navigation */
+/* ========================================
+   Base Navigation (Mobile First - Default)
+   ======================================== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 var(--space-4);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+}
+
+.logo-text {
+    display: none;
+}
+
+.nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    max-height: calc(100vh - 140px);
+    background: var(--surface);
+    flex-direction: column;
+    padding: 0;
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.nav-menu.active {
+    transform: translateY(0);
+}
+
+.nav-menu .nav-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    padding: 0 var(--space-4);
+    font-size: 1rem;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+/* Nav Actions - Bottom Bar */
+.nav-actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: var(--space-3) var(--space-4);
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    gap: var(--space-3);
+    z-index: 998;
+}
+
+.nav-actions .btn {
+    flex: 1;
+    height: 48px;
+}
+
+.nav-actions .btn-secondary {
+    display: none;
+}
+
+/* Language Switcher - Mobile */
+.language-switcher {
+    position: fixed;
+    top: 12px;
+    right: 60px;
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    z-index: 1001;
+}
+
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    background: var(--background);
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+.lang-divider {
+    display: none;
+}
+
+/* Hamburger */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger .bar {
+    width: 22px;
+    height: 2px;
+    background: var(--text-primary);
+    transition: transform 0.3s ease;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ========================================
+   Desktop Navigation (min-width: 769px)
+   ======================================== */
 @media (min-width: 769px) {
     .navbar {
         height: 80px;
+        padding: 0 var(--space-5);
     }
     
     .logo-img {
@@ -462,26 +624,28 @@ button {
         font-size: 0.75rem;
     }
     
+    /* Desktop Menu */
     .nav-menu {
         position: static;
+        display: flex;
         flex-direction: row;
+        align-items: center;
         width: auto;
         max-height: none;
-        transform: none;
         background: transparent;
+        transform: none;
+        overflow: visible;
         box-shadow: none;
         padding: 0;
-        gap: var(--space-5);
-        overflow: visible;
-        z-index: auto;
+        gap: var(--space-1);
     }
     
     .nav-menu .nav-item {
-        width: auto;
         border: none;
     }
     
     .nav-link {
+        display: inline-flex;
         width: auto;
         height: auto;
         padding: var(--space-2) var(--space-3);
@@ -491,14 +655,13 @@ button {
     .nav-link:hover,
     .nav-link.active {
         background: transparent;
-        padding-left: var(--space-3);
     }
     
     .nav-link::after {
         content: '';
         position: absolute;
         bottom: 0;
-        left: 0;
+        left: var(--space-3);
         width: 0;
         height: 2px;
         background: var(--primary);
@@ -507,76 +670,56 @@ button {
     
     .nav-link:hover::after,
     .nav-link.active::after {
-        width: 100%;
+        width: calc(100% - var(--space-3) * 2);
     }
     
+    /* Desktop Actions */
     .nav-actions {
         position: static;
         width: auto;
         padding: 0;
         background: transparent;
         border: none;
-        box-shadow: none;
-        gap: var(--space-4);
+        gap: var(--space-3);
+    }
+    
+    .nav-actions .btn {
+        flex: none;
     }
     
     .nav-actions .btn-secondary {
         display: inline-flex;
     }
     
+    /* Desktop Language */
     .language-switcher {
         position: static;
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
     }
     
+    .lang-btn {
+        background: transparent;
+        min-width: auto;
+        height: auto;
+        padding: var(--space-2) var(--space-3);
+    }
+    
+    .lang-btn:hover,
+    .lang-btn.active {
+        background: var(--primary-light);
+        color: var(--primary);
+    }
+    
+    .lang-divider {
+        display: inline;
+    }
+    
+    /* Hide hamburger */
     .hamburger {
         display: none;
     }
-}
-
-/* ========================================
-   Additional Language Switcher Styles
-   ======================================== */
-.language-switcher {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    position: absolute;
-    top: 50%;
-    right: 60px;
-    transform: translateY(-50%);
-}
-
-.lang-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 36px;
-    height: 36px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    text-decoration: none;
-    border-radius: var(--radius-md);
-    transition: var(--transition);
-    background: var(--primary-light);
-}
-
-.lang-btn:hover,
-.lang-btn.active {
-    background: var(--primary);
-    color: white;
-}
-
-.lang-divider {
-    color: var(--border);
-    font-size: 0.75rem;
-}
-
-.hamburger .bar {
-    width: 25px;
-    height: 2px;
-    background: var(--text-primary);
-    transition: var(--transition);
 }
 
 /* ========================================
