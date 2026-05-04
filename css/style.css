@@ -677,10 +677,17 @@ button {
     
     /* Desktop Language */
     .language-switcher {
-        position: static;
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
         display: flex;
-        align-items: center;
+        flex-direction: column;
         gap: var(--space-2);
+        background: var(--surface);
+        padding: var(--space-3);
+        border-radius: var(--radius-md);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
     
     .lang-btn {
@@ -688,6 +695,7 @@ button {
         min-width: auto;
         height: auto;
         padding: var(--space-2) var(--space-3);
+        font-size: 0.875rem;
     }
     
     .lang-btn:hover,
@@ -697,7 +705,7 @@ button {
     }
     
     .lang-divider {
-        display: inline;
+        display: none;
     }
     
     .hamburger {
@@ -2096,8 +2104,11 @@ button {
     
     /* Desktop language switcher */
     .language-switcher {
-        position: static;
-        flex-direction: row;
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        flex-direction: column;
     }
     
     .lang-btn {
@@ -2199,9 +2210,10 @@ button {
 @media (max-width: 480px) {
     
     .language-switcher {
-        position: absolute;
-        top: var(--space-3);
-        right: 120px;
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .hamburger {
@@ -2550,8 +2562,10 @@ button {
     }
     
     .language-switcher {
-        top: var(--space-2);
-        right: 100px;
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .lang-btn {
