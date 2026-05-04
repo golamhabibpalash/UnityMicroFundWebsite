@@ -2261,6 +2261,8 @@ button {
         --space-5: 20px;
         --space-6: 28px;
         --space-7: 40px;
+        --space-8: 50px;
+        --space-9: 70px;
         font-size: 15px;
     }
     
@@ -2269,7 +2271,13 @@ button {
     }
     
     .container {
+        width: 100%;
+        max-width: 100%;
         padding: 0 var(--space-4);
+    }
+    
+    .hero, .projects, .about, .how-it-works, .shariah, .testimonials, .contact, .footer {
+        width: 100%;
         max-width: 100%;
     }
     
@@ -2279,6 +2287,7 @@ button {
     
     body {
         font-size: 1rem;
+        overflow-x: hidden;
     }
 }
 
@@ -2290,6 +2299,19 @@ button {
     
     body {
         font-size: 1rem;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 var(--space-3);
+    }
+    
+    .hero, .projects, .about, .how-it-works, .shariah, .testimonials, .contact, .footer {
+        width: 100%;
+        max-width: 100%;
+        padding-left: var(--space-3);
+        padding-right: var(--space-3);
     }
     
     .language-switcher {
