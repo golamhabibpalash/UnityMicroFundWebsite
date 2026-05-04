@@ -716,9 +716,8 @@ button {
         display: inline;
     }
     
-    /* Hide hamburger */
     .hamburger {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -2190,31 +2189,30 @@ button {
         height: 70px;
     }
 }
-        border-bottom: 1px solid var(--border);
-        width: 100%;
+
+/* Small Tablet to Large Mobile (768px) - iPad Portrait adjustments */
+@media (max-width: 768px) {
+    :root {
+        --space-5: 20px;
+        --space-6: 28px;
+        --space-7: 40px;
     }
     
-    .nav-actions {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: var(--space-3) var(--space-4);
-        background: var(--surface);
-        border-top: 1px solid var(--border);
-        justify-content: center;
-        gap: var(--space-3);
-        z-index: 998;
+    .container {
+        padding: 0 var(--space-4);
     }
     
-    .nav-actions .btn-secondary {
-        display: none;
+    /* Keep header minimal */
+    .header {
+        height: 70px;
     }
     
-    .nav-actions .btn-primary {
-        flex: 1;
-        max-width: 200px;
+    .navbar {
+        height: 70px;
     }
+}
+
+@media (max-width: 480px) {
     
     .language-switcher {
         position: absolute;
