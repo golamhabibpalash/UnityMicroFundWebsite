@@ -20,6 +20,8 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-line-clamp: 100;
+    line-height: 1.6;
 }
 
 /* CSS Variables - Design System */
@@ -41,9 +43,11 @@ body {
     --shadow: rgba(0, 0, 0, 0.1);
 
     /* Typography */
-    --font-heading: 'Poppins', 'Noto Sans Bengali', sans-serif;
-    --font-body: 'Inter', 'Noto Sans Bengali', sans-serif;
-    --font-bengali: 'Noto Sans Bengali', sans-serif;
+    --font-heading: 'Poppins', 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+    --font-body: 'Inter', 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+    --font-bengali: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+    --font-bn-linebreak: strict;
+}
 
     /* Spacing */
     --space-1: 4px;
