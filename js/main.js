@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFormValidation();
     initBackToTop();
     initModal();
+    initFooterAccordion();
 });
 
 // ========================================
@@ -318,4 +319,29 @@ function closeModal() {
     const overlay = document.getElementById('modal-overlay');
     overlay.classList.remove('active');
     document.body.style.overflow = '';
+}
+
+// ========================================
+// Footer Accordion
+// ========================================
+function initFooterAccordion() {
+    const columns = document.querySelectorAll('.footer-column');
+    
+    columns.forEach(column => {
+        const header = column.querySelector('.footer-column-header');
+        
+        if (header) {
+            header.addEventListener('click', function() {
+                const isActive = column.classList.contains('active');
+                
+                // Close all columns
+                columns.forEach(col => col.classList.remove('active'));
+                
+                // Toggle current column
+                if (!isActive) {
+                    column.classList.add('active');
+                }
+            });
+        }
+    });
 }
