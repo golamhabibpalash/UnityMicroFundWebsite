@@ -532,49 +532,44 @@ button {
         display: none;
     }
 }
-    color: var(--primary);
-}
 
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
-}
-
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: var(--space-4);
-}
-
+/* ========================================
+   Additional Language Switcher Styles
+   ======================================== */
 .language-switcher {
     display: flex;
     align-items: center;
     gap: var(--space-2);
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    transform: translateY(-50%);
 }
 
 .lang-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-secondary);
-    padding: var(--space-2);
+    text-decoration: none;
+    border-radius: var(--radius-md);
     transition: var(--transition);
+    background: var(--primary-light);
 }
 
 .lang-btn:hover,
 .lang-btn.active {
-    color: var(--primary);
+    background: var(--primary);
+    color: white;
 }
 
 .lang-divider {
     color: var(--border);
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: var(--space-2);
+    font-size: 0.75rem;
 }
 
 .hamburger .bar {
@@ -1972,32 +1967,22 @@ button {
         position: relative;
         height: 500px;
     }
+    
+    /* Desktop language switcher */
+    .language-switcher {
+        position: static;
+        flex-direction: row;
+    }
+    
+    .lang-btn {
+        background: transparent;
+    }
+    
+    .lang-btn:hover,
+    .lang-btn.active {
+        background: var(--primary-light);
+    }
 }
-    
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .hero-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .hero-visual {
-        display: none;
-    }
-    
-    .value-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .steps-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--space-4);
-    }
-    
-    .steps-line {
-        display: none;
-    }
     
     .shariah-content {
         grid-template-columns: 1fr;
