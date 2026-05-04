@@ -373,13 +373,38 @@ button {
     display: none;
 }
 
+/* Language Switcher in Nav Actions */
 .language-switcher {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
-    position: absolute;
-    top: var(--space-3);
-    right: 70px;
+    gap: var(--space-1);
+    background: var(--background);
+    padding: var(--space-1);
+    border-radius: var(--radius-md);
+    min-width: auto;
+}
+
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+.lang-divider {
+    display: none;
 }
 
 .lang-btn {
