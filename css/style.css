@@ -399,8 +399,8 @@ button {
    ======================================== */
 .hero {
     position: relative;
-    padding: 140px 0 var(--space-9);
-    min-height: 100vh;
+    padding: 120px 0 var(--space-8);
+    min-height: auto;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -426,62 +426,77 @@ button {
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
     align-items: center;
+    text-align: center;
 }
 
 .hero-text {
-    max-width: 600px;
+    max-width: 100%;
+    width: 100%;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: var(--space-5);
-    background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    line-height: 1.2;
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    margin-bottom: var(--space-6);
-    line-height: 1.7;
+    margin-bottom: var(--space-5);
+    line-height: 1.6;
+    max-width: 100%;
 }
 
 .hero-cta {
     display: flex;
-    gap: var(--space-4);
-    margin-bottom: var(--space-6);
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+    width: 100%;
+}
+
+.hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+    padding: var(--space-4) var(--space-5);
+    font-size: 1rem;
+    min-height: 52px;
 }
 
 .hero-trust {
     display: flex;
-    gap: var(--space-5);
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
 }
 
 .trust-badge {
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     font-weight: 500;
     color: var(--text-secondary);
+    padding: var(--space-2) var(--space-3);
+    background: var(--surface);
+    border-radius: var(--radius-full);
+    box-shadow: 0 2px 8px var(--shadow);
 }
 
 .trust-badge i {
     color: var(--primary);
-    font-size: 1rem;
+    font-size: 0.875rem;
 }
 
 .hero-visual {
-    position: relative;
-    height: 500px;
+    display: none;
 }
 
 .hero-illustration {
@@ -1496,6 +1511,74 @@ button {
     }
     
     .hero-content {
+        flex-direction: column;
+    }
+    
+    .hero-visual {
+        display: none;
+    }
+}
+
+/* Desktop styles - show visual and larger text */
+@media (min-width: 769px) {
+    .hero {
+        padding: 140px 0 var(--space-9);
+        min-height: 100vh;
+    }
+    
+    .hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+        text-align: left;
+        align-items: center;
+    }
+    
+    .hero-text {
+        max-width: 600px;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+        line-height: 1.15;
+        margin-bottom: var(--space-5);
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+        margin-bottom: var(--space-6);
+    }
+    
+    .hero-cta {
+        flex-direction: row;
+        width: auto;
+    }
+    
+    .hero-cta .btn {
+        width: auto;
+    }
+    
+    .hero-trust {
+        justify-content: flex-start;
+    }
+    
+    .trust-badge {
+        background: transparent;
+        box-shadow: none;
+    }
+    
+    .hero-visual {
+        display: block;
+        position: relative;
+        height: 500px;
+    }
+}
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content {
         grid-template-columns: 1fr;
     }
     
@@ -2011,19 +2094,32 @@ button {
     }
     
     .hero-title {
-        font-size: 1.625rem;
+        font-size: 1.5rem;
     }
     
     .hero-subtitle {
+        font-size: 0.875rem;
+    }
+    
+    .hero-cta {
+        gap: var(--space-2);
+    }
+    
+    .hero-cta .btn {
+        padding: var(--space-3) var(--space-4);
         font-size: 0.9375rem;
+        min-height: 48px;
     }
     
     .hero-trust {
         gap: var(--space-2);
+        flex-direction: column;
+        align-items: center;
     }
     
     .trust-badge {
         font-size: 0.75rem;
+        padding: var(--space-2) var(--space-3);
     }
     
     /* Sections */
