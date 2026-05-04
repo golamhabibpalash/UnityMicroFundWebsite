@@ -2255,51 +2255,42 @@ button {
     }
 }
 
-/* Small Tablet to Large Mobile (768px) - iPad Portrait adjustments */
+/* Small Tablet (768px) */
 @media (max-width: 768px) {
     :root {
         --space-5: 20px;
         --space-6: 28px;
         --space-7: 40px;
+        font-size: 15px;
+    }
+    
+    html {
+        font-size: 15px;
     }
     
     .container {
         padding: 0 var(--space-4);
+        max-width: 100%;
     }
     
-    /* Keep header minimal */
-    .header {
+    .header, .navbar {
         height: 70px;
     }
     
-    .navbar {
-        height: 70px;
-    }
-}
-
-/* Small Tablet to Large Mobile (768px) - iPad Portrait adjustments */
-@media (max-width: 768px) {
-    :root {
-        --space-5: 20px;
-        --space-6: 28px;
-        --space-7: 40px;
-    }
-    
-    .container {
-        padding: 0 var(--space-4);
-    }
-    
-    /* Keep header minimal */
-    .header {
-        height: 70px;
-    }
-    
-    .navbar {
-        height: 70px;
+    body {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
+    
+    html {
+        font-size: 14px;
+    }
+    
+    body {
+        font-size: 1rem;
+    }
     
     .language-switcher {
         position: fixed;
