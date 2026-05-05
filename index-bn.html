@@ -1,1114 +1,1557 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="format-detection" content="telephone=yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="theme-color" content="#0D7377">
-    <meta name="description" content="ইউনিটি মাইক্রোফান্ড - বাংলাদেশের নিরাশ্রয় শরিয়াহ-সম্মত মাইক্রো-বিনিয়োগ প্ল্যাটফর্ম। নৈতিক হালাল বিনিয়োগের মাধ্যমে সম্পদ গড়ে তুলুন।">
-    <title>ইউনিটি মাইক্রোফান্ড - শরিয়াহ সম্মত মাইক্রো বিনিয়োগ প্ল্যাটফর্ম</title>
-    <link rel="alternate" hreflang="bn" href="index-bn.html">
-    <link rel="alternate" hreflang="en" href="index.html">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="theme-color" content="#0D7377" />
+    <meta
+      name="description"
+      content="ইউনিটি মাইক্রোফান্ড - বাংলাদেশের নিরাশ্রয় শরিয়াহ-সম্মত মাইক্রো-বিনিয়োগ প্ল্যাটফর্ম। নৈতিক হালাল বিনিয়োগের মাধ্যমে সম্পদ গড়ে তুলুন।"
+    />
+    <title>
+      ইউনিটি মাইক্রোফান্ড - শরিয়াহ সম্মত মাইক্রো বিনিয়োগ প্ল্যাটফর্ম
+    </title>
+    <link rel="alternate" hreflang="bn" href="index-bn.html" />
+    <link rel="alternate" hreflang="en" href="index.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <!-- Language Switcher - Fixed Right Side -->
-    <div class="language-switcher">
-        <a href="index.html" class="lang-btn" title="English" onclick="saveScrollPosition()">🇬🇧</a>
-        <a href="index-bn.html" class="lang-btn active" title="বাংলা" onclick="saveScrollPosition()">🇧🇩</a>
+    <div class="lang-switcher">
+      <a href="index.html" class="lang-btn" onclick="saveScrollPosition()"
+        >EN</a
+      >
+      <a
+        href="index-bn.html"
+        class="lang-btn active"
+        onclick="saveScrollPosition()"
+        >বি</a
+      >
     </div>
 
     <script>
-        function saveScrollPosition() {
-            sessionStorage.setItem('scrollPosition', window.scrollY);
+      function saveScrollPosition() {
+        sessionStorage.setItem("scrollPosition", window.scrollY);
+      }
+
+      function restoreScrollPosition() {
+        const savedPosition = sessionStorage.getItem("scrollPosition");
+        if (savedPosition) {
+          setTimeout(function () {
+            window.scrollTo(0, parseInt(savedPosition));
+            sessionStorage.removeItem("scrollPosition");
+          }, 100);
         }
-        window.addEventListener('load', function() {
-            const savedPosition = sessionStorage.getItem('scrollPosition');
-            if (savedPosition) {
-                window.scrollTo(0, parseInt(savedPosition));
-                sessionStorage.removeItem('scrollPosition');
-            }
-        });
+      }
+
+      window.addEventListener("load", restoreScrollPosition);
+      window.addEventListener("pageshow", function (event) {
+        if (event.persisted) {
+          restoreScrollPosition();
+        }
+      });
     </script>
 
     <!-- Header -->
     <header class="header" id="header">
-        <div class="container">
-            <nav class="navbar">
-                <a href="index-bn.html" class="logo">
-                    <img src="sources/logo.png" alt="Unity MicroFund" class="logo-img">
-                    <div class="logo-text">
-                        <span class="logo-name">ইউনিটি মাইক্রোফান্ড</span>
-                        <span class="logo-tagline">শরিয়াহ সম্মত</span>
-                    </div>
-                </a>
+      <div class="container">
+        <nav class="navbar">
+          <a href="index-bn.html" class="logo">
+            <img
+              src="sources/logo.png"
+              alt="Unity MicroFund"
+              class="logo-img"
+            />
+            <div class="logo-text">
+              <span class="logo-name">Unity MicroFund</span>
+              <span class="logo-tagline">শরিয়াহ সম্মত</span>
+            </div>
+          </a>
 
-                <ul class="nav-menu" id="nav-menu">
-                    <li class="nav-item"><a href="#home" class="nav-link">হোম</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">আমাদের সম্পর্কে</a></li>
-                    <li class="nav-item"><a href="#how-it-works" class="nav-link">কিভাবে কাজ করে</a></li>
-                    <li class="nav-item"><a href="#shariah" class="nav-link">শরিয়াহ সম্মতি</a></li>
-                    <li class="nav-item"><a href="#projects" class="nav-link">প্রজেক্ট</a></li>
-                    <li class="nav-item"><a href="#policies" class="nav-link">নীতিমালা</a></li>
-                    <li class="nav-item"><a href="#faq" class="nav-link">প্রশ্নাবলী</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">যোগাযোগ</a></li>
-                </ul>
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="#home" class="nav-link">হোম</a></li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link">আমাদের সম্পর্কে</a>
+            </li>
+            <li class="nav-item">
+              <a href="#how-it-works" class="nav-link">কিভাবে কাজ করে</a>
+            </li>
+            <li class="nav-item">
+              <a href="#shariah" class="nav-link">শরিয়াহ সম্মতি</a>
+            </li>
+            <li class="nav-item">
+              <a href="#projects" class="nav-link">প্রজেক্ট</a>
+            </li>
+            <li class="nav-item">
+              <a href="#policies" class="nav-link">নীতিমালা</a>
+            </li>
+            <li class="nav-item">
+              <a href="#faq" class="nav-link">প্রশ্নাবলী</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">যোগাযোগ</a>
+            </li>
+          </ul>
 
-                <div class="nav-actions">
-                    <a href="#register" class="btn btn-secondary">লগইন</a>
-                    <a href="#register" class="btn btn-primary">যোগ দিন</a>
-                </div>
+          <div class="nav-actions">
+            <a href="#register" class="btn btn-secondary">লগইন</a>
+            <a href="#register" class="btn btn-primary">যোগ দিন</a>
+          </div>
 
-<div class="hamburger" id="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
-        </div>
+          <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </nav>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-bg">
-            <div class="hero-pattern"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">বিশ্বাসের সাথে বিনিয়োগ করুন,<br>আয়ের আশা রাখুন।</h1>
-                    <p class="hero-subtitle">বাংলাদেশের নিরাশ্রয় শরিয়াহ-সম্মত মাইক্রো-বিনিয়োগ প্ল্যাটফর্মে যোগ দিন। নৈতিক সুযোগ-সুবিধার মাধ্যমে সম্পদ গড়ে তুলুন যা মুসলিম সম্প্রদায়ের কল্যাণ করে।</p>
-                    <div class="hero-cta">
-                        <a href="#register" class="btn btn-primary btn-large">
-                            <span>বিনিয়োগ শুরু করুন</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="#projects" class="btn btn-outline btn-large">
-                            <span>সুযোগ দেখুন</span>
-                        </a>
-                    </div>
-                    <div class="hero-trust">
-                        <div class="trust-badge">
-                            <i class="fas fa-certificate"></i>
-                            <span>শরিয়াহ প্রত্যয়িত</span>
-                        </div>
-                        <div class="trust-badge">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>নিরাপদ ও স্বচ্ছ</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="hero-illustration">
-                        <div class="floating-card card-1">
-                            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-                            <div class="card-text">+১৮.৫%</div>
-                            <div class="card-label">প্রত্যাশিত মুনাফা</div>
-                        </div>
-                        <div class="floating-card card-2">
-                            <div class="card-icon"><i class="fas fa-hand-holding-heart"></i></div>
-                            <div class="card-text">১,২৫০+</div>
-                            <div class="card-label">সক্রিয় বিনিয়োগকারী</div>
-                        </div>
-                        <div class="floating-card card-3">
-                            <div class="card-icon"><i class="fas fa-mosque"></i></div>
-                            <div class="card-text">১০০%</div>
-                            <div class="card-label">শরিয়াহ সম্মত</div>
-                        </div>
-                    </div>
-                </div>
+      <div class="hero-bg">
+        <div class="hero-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              বিশ্বাসের সাথে বিনিয়োগ করুন,<br />আয়ের আশা রাখুন।
+            </h1>
+            <p class="hero-subtitle">
+              বাংলাদেশের নিরাশ্রয় শরিয়াহ-সম্মত মাইক্রো-বিনিয়োগ প্ল্যাটফর্মে
+              যোগ দিন। নৈতিক সুযোগ-সুবিধার মাধ্যমে সম্পদ গড়ে তুলুন যা মুসলিম
+              সম্প্রদায়ের কল্যাণ করে।
+            </p>
+            <div class="hero-cta">
+              <a href="#register" class="btn btn-primary btn-large">
+                <span>বিনিয়োগ শুরু করুন</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="#projects" class="btn btn-outline btn-large">
+                <span>সুযোগ দেখুন</span>
+              </a>
             </div>
+            <div class="hero-trust">
+              <div class="trust-badge">
+                <i class="fas fa-certificate"></i>
+                <span>শরিয়াহ প্রত্যয়িত</span>
+              </div>
+              <div class="trust-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>নিরাপদ ও স্বচ্ছ</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-illustration">
+              <div class="floating-card card-1">
+                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="card-text">+১৮.৫%</div>
+                <div class="card-label">প্রত্যাশিত মুনাফা</div>
+              </div>
+              <div class="floating-card card-2">
+                <div class="card-icon">
+                  <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <div class="card-text">১,২৫০+</div>
+                <div class="card-label">সক্রিয় বিনিয়োগকারী</div>
+              </div>
+              <div class="floating-card card-3">
+                <div class="card-icon"><i class="fas fa-mosque"></i></div>
+                <div class="card-text">১০০%</div>
+                <div class="card-label">শরিয়াহ সম্মত</div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Stats Section -->
     <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">২,৫০০+</div>
-                    <div class="stat-label">মোট বিনিয়োগকারী</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">৪৫+</div>
-                    <div class="stat-label">অর্থায়িত প্রজেক্ট</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">৳১২কোটি+</div>
-                    <div class="stat-label">মোট বিনিয়োগ</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">১৬.৫%</div>
-                    <div class="stat-label">গড় মুনাফা</div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">২,৫০০+</div>
+            <div class="stat-label">মোট বিনিয়োগকারী</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">৪৫+</div>
+            <div class="stat-label">অর্থায়িত প্রজেক্ট</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">৳১২কোটি+</div>
+            <div class="stat-label">মোট বিনিয়োগ</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">১৬.৫%</div>
+            <div class="stat-label">গড় মুনাফা</div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Value Proposition -->
     <section class="value-proposition" id="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">কেন আমাদের বেছে নেবেন</span>
-                <h2 class="section-title">নৈতিক বিনিয়োগের মাধ্যমে সম্পদ গড়ে তুলুন</h2>
-                <p class="section-subtitle">আমরা আধুনিক বিনিয়োগ প্রযুক্তিকে স্থায়ী ইসলামিক নীতির সাথে একত্রিত করি যা সবার কল্যাণে সুযোগ তৈরি করে।</p>
-            </div>
-            <div class="value-grid">
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3 class="value-title">শরিয়াহ সম্মত</h3>
-                    <p class="value-desc">প্রতিটি বিনিয়োগ আমাদের শরিয়াহ উপদেষ্টা পরিষদ দ্বারা যাচাই করা হয় ইসলামিক নীতির সম্পূর্ণ অনুসরণ নিশ্চিত করতে।</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3 class="value-title">স্বচ্ছ মুনাফা</h3>
-                    <p class="value-desc">লুকানো ফি ছাড়াই স্পষ্ট মুনাফা-বণ্টন সূত্র। আপনার বিনিয়োগ রিয়াল-টাইমে ট্র্যাক করুন।</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-hand-holding-usd"></i>
-                    </div>
-                    <h3 class="value-title">মাইক্রো বিনিয়োগ</h3>
-                    <p class="value-desc">মাত্র ৫,০০০ টাকা থেকে শুরু করুন। প্রত্যেকের সম্পদ গড়ে তোলার সুযোগ পাওয়া উচিত।</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="value-title">সামাজিক প্রভাব</h3>
-                    <p class="value-desc">আপনার বিন��য��োগ প্রকৃত ব্যবসা ও প্রজেক্টে অর্থায়ন করে যা কর্মসংস্থান ও অর্থনৈতিক প্রবৃদ্ধি তৈরি করে।</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">কেন আমাদের বেছে নেবেন</span>
+          <h2 class="section-title">
+            নৈতিক বিনিয়োগের মাধ্যমে সম্পদ গড়ে তুলুন
+          </h2>
+          <p class="section-subtitle">
+            আমরা আধুনিক বিনিয়োগ প্রযুক্তিকে স্থায়ী ইসলামিক নীতির সাথে একত্রিত
+            করি যা সবার কল্যাণে সুযোগ তৈরি করে।
+          </p>
         </div>
+        <div class="value-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3 class="value-title">শরিয়াহ সম্মত</h3>
+            <p class="value-desc">
+              প্রতিটি বিনিয়োগ আমাদের শরিয়াহ উপদেষ্টা পরিষদ দ্বারা যাচাই করা
+              হয় ইসলামিক নীতির সম্পূর্ণ অনুসরণ নিশ্চিত করতে।
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <h3 class="value-title">স্বচ্ছ মুনাফা</h3>
+            <p class="value-desc">
+              লুকানো ফি ছাড়াই স্পষ্ট মুনাফা-বণ্টন সূত্র। আপনার বিনিয়োগ
+              রিয়াল-টাইমে ট্র্যাক করুন।
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-hand-holding-usd"></i>
+            </div>
+            <h3 class="value-title">মাইক্রো বিনিয়োগ</h3>
+            <p class="value-desc">
+              মাত্র ৫,০০০ টাকা থেকে শুরু করুন। প্রত্যেকের সম্পদ গড়ে তোলার সুযোগ
+              পাওয়া উচিত।
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="value-title">সামাজিক প্রভাব</h3>
+            <p class="value-desc">
+              আপনার বিন��য��োগ প্রকৃত ব্যবসা ও প্রজেক্টে অর্থায়ন করে যা
+              কর্মসংস্থান ও অর্থনৈতিক প্রবৃদ্ধি তৈরি করে।
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- How It Works -->
     <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">সহজ প্রক্রিয়া</span>
-                <h2 class="section-title">কিভাবে কাজ করে</h2>
-                <p class="section-subtitle">পাঁচটি সহজ ধাপে আপনার নৈতিক বিনিয়োগ যাত্রা শুরু করুন</p>
-            </div>
-            <div class="steps-container">
-                <div class="steps-line"></div>
-                <div class="step step-1">
-                    <div class="step-number">০১</div>
-                    <div class="step-content">
-                        <h3 class="step-title">অ্যাকাউন্ট তৈরি করুন</h3>
-                        <p class="step-desc">আপনার মৌলিক তথ্য দিয়ে নিবন্ধন করুন এবং KYC যাচাই সম্পন্ন করুন।</p>
-                    </div>
-                </div>
-                <div class="step step-2">
-                    <div class="step-number">০২</div>
-                    <div class="step-content">
-                        <h3 class="step-title">প্রজেক্ট ব্রাউজ করুন</h3>
-                        <p class="step-desc">বিভিন্ন খাতে আমাদের নির্বাচিত বিনিয়োগ সুযোগগুলো অন্বেষণ করুন।</p>
-                    </div>
-                </div>
-                <div class="step step-3">
-                    <div class="step-number">০৩</div>
-                    <div class="step-content">
-                        <h3 class="step-title">তহবিল বিনিয়োগ করুন</h3>
-                        <p class="step-desc">আপনার বিনিয়োগ পরিমাণ এবং পেমেন্ট পদ্ধতি বেছে নিন। তহবিল এস্ক্রোতে রাখা হয়।</p>
-                    </div>
-                </div>
-                <div class="step step-4">
-                    <div class="step-number">০৪</div>
-                    <div class="step-content">
-                        <h3 class="step-title">অগ্রগতি ট্র্যাক করুন</h3>
-                        <p class="step-desc">রিয়াল-টাইম আপডেট সহ আপনার ড্যাশবোর্ডের মাধ্যমে আপনার বিনিয়োগ পর্যবেক্ষণ করুন।</p>
-                    </div>
-                </div>
-                <div class="step step-5">
-                    <div class="step-number">০৫</div>
-                    <div class="step-content">
-                        <h3 class="step-title">মুনাফা গ্রহণ করুন</h3>
-                        <p class="step-desc">ত্রৈমাসিক মুনাফা বিতরণ সরাসরি আপনার অ্যাকাউন্টে। পুনঃবিনিয়োগ বা উত্তোলন করুন।</p>
-                    </div>
-                </div>
-            </div>
-            <div class="steps-cta">
-                <a href="#register" class="btn btn-primary">
-                    <span>এখনই শুরু করুন</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">সহজ প্রক্রিয়া</span>
+          <h2 class="section-title">কিভাবে কাজ করে</h2>
+          <p class="section-subtitle">
+            পাঁচটি সহজ ধাপে আপনার নৈতিক বিনিয়োগ যাত্রা শুরু করুন
+          </p>
         </div>
+        <div class="steps-container">
+          <div class="steps-line"></div>
+          <div class="step step-1">
+            <div class="step-number">০১</div>
+            <div class="step-content">
+              <h3 class="step-title">অ্যাকাউন্ট তৈরি করুন</h3>
+              <p class="step-desc">
+                আপনার মৌলিক তথ্য দিয়ে নিবন্ধন করুন এবং KYC যাচাই সম্পন্ন করুন।
+              </p>
+            </div>
+          </div>
+          <div class="step step-2">
+            <div class="step-number">০২</div>
+            <div class="step-content">
+              <h3 class="step-title">প্রজেক্ট ব্রাউজ করুন</h3>
+              <p class="step-desc">
+                বিভিন্ন খাতে আমাদের নির্বাচিত বিনিয়োগ সুযোগগুলো অন্বেষণ করুন।
+              </p>
+            </div>
+          </div>
+          <div class="step step-3">
+            <div class="step-number">০৩</div>
+            <div class="step-content">
+              <h3 class="step-title">তহবিল বিনিয়োগ করুন</h3>
+              <p class="step-desc">
+                আপনার বিনিয়োগ পরিমাণ এবং পেমেন্ট পদ্ধতি বেছে নিন। তহবিল
+                এস্ক্রোতে রাখা হয়।
+              </p>
+            </div>
+          </div>
+          <div class="step step-4">
+            <div class="step-number">০৪</div>
+            <div class="step-content">
+              <h3 class="step-title">অগ্রগতি ট্র্যাক করুন</h3>
+              <p class="step-desc">
+                রিয়াল-টাইম আপডেট সহ আপনার ড্যাশবোর্ডের মাধ্যমে আপনার বিনিয়োগ
+                পর্যবেক্ষণ করুন।
+              </p>
+            </div>
+          </div>
+          <div class="step step-5">
+            <div class="step-number">০৫</div>
+            <div class="step-content">
+              <h3 class="step-title">মুনাফা গ্রহণ করুন</h3>
+              <p class="step-desc">
+                ত্রৈমাসিক মুনাফা বিতরণ সরাসরি আপনার অ্যাকাউন্টে। পুনঃবিনিয়োগ বা
+                উত্তোলন করুন।
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="steps-cta">
+          <a href="#register" class="btn btn-primary">
+            <span>এখনই শুরু করুন</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Shariah Compliance -->
     <section class="shariah-compliance" id="shariah">
-        <div class="container">
-            <div class="shariah-content">
-                <div class="shariah-text">
-                    <span class="section-tag">আমাদের প্রতিশ্রুতি</span>
-                    <h2 class="section-title">কঠোর শরিয়াহ সম্মতি</h2>
-                    <p class="section-subtitle">আমরা ইসলামিক আর্থিক নৈতিকতার সর্বোচ্চ মানদণ্ড মেনে চলি। প্রতিটি লেনদেন আমাদের যোগ্য শরিয়াহ উপদেষ্টা পরিষদ দ্বারা পর্যালোচনা ও অনুমোদিত।</p>
-                    <div class="shariah-principles">
-                        <div class="principle">
-                            <div class="principle-icon prohibited">
-                                <i class="fas fa-ban"></i>
-                            </div>
-                            <div class="principle-content">
-                                <h4>কোনো রিবা (সুদ) নেই</h4>
-                                <p>আমরা কখনো সুদ-ভিত্তিক লেনদেন করি না। সমস্ত মুনাফা প্রকৃত মুনাফা-বণ্টন থেকে আসে।</p>
-                            </div>
-                        </div>
-                        <div class="principle">
-                            <div class="principle-icon prohibited">
-                                <i class="fas fa-question-circle"></i>
-                            </div>
-                            <div class="principle-content">
-                                <h4>কোনো ঘারার (অনিশ্চয়তা) নেই</h4>
-                                <p>সমস্ত চুক্তি স্পষ্ট কোনো অস্পষ্ট শর্ত বা অনুমানমূলক উপাদান ছাড়া।</p>
-                            </div>
-                        </div>
-                        <div class="principle">
-                            <div class="principle-icon prohibited">
-                                <i class="fas fa-dice"></i>
-                            </div>
-                            <div class="principle-content">
-                                <h4>কোনো মাইসির (জুয়া) নেই</h4>
-                                <p>আমরা জুয়া, অনুমান এবং অতিরিক্ত ঝুঁকি এড়িয়ে চলি।</p>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#" class="btn btn-outline">
-                        <span>আমাদের শরিয়াহ সার্টিফিকেট দেখুন</span>
-                        <i class="fas fa-download"></i>
-                    </a>
+      <div class="container">
+        <div class="shariah-content">
+          <div class="shariah-text">
+            <span class="section-tag">আমাদের প্রতিশ্রুতি</span>
+            <h2 class="section-title">কঠোর শরিয়াহ সম্মতি</h2>
+            <p class="section-subtitle">
+              আমরা ইসলামিক আর্থিক নৈতিকতার সর্বোচ্চ মানদণ্ড মেনে চলি। প্রতিটি
+              লেনদেন আমাদের যোগ্য শরিয়াহ উপদেষ্টা পরিষদ দ্বারা পর্যালোচনা ও
+              অনুমোদিত।
+            </p>
+            <div class="shariah-principles">
+              <div class="principle">
+                <div class="principle-icon prohibited">
+                  <i class="fas fa-ban"></i>
                 </div>
-                <div class="shariah-visual">
-                    <div class="certificate-display">
-                        <div class="certificate-badge">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h3>শরিয়াহ সম্মতি সার্টিফিকেট</h3>
-                        <p>ইসলামিক ফাইন্যান্স কনসাল্টিং দ্বারা জারি</p>
-                        <p>বৈধ: ২০২৪ - ২০২৫</p>
-                        <div class="advisory-board">
-                            <h4>উপদেষ্টা পণ্ডিত</h4>
-                            <div class="scholar">
-                                <div class="scholar-avatar">د</div>
-                                <div class="scholar-info">
-                                    <span class="scholar-name">ড. আব্দুল্লাহ হাসান</span>
-                                    <span class="scholar-degree">পিএইচডি ইসলামিক ফাইন্যান্স, আল-আজহার</span>
-                                </div>
-                            </div>
-                            <div class="scholar">
-                                <div class="scholar-avatar">م</div>
-                                <div class="scholar-info">
-                                    <span class="scholar-name">মুফতি রহমান ফয়সাল</span>
-                                    <span class="scholar-degree">সার্টিফাইড ইসলামিক ফাইন্যান��স ���্রোফেশনাল</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="principle-content">
+                  <h4>কোনো রিবা (সুদ) নেই</h4>
+                  <p>
+                    আমরা কখনো সুদ-ভিত্তিক লেনদেন করি না। সমস্ত মুনাফা প্রকৃত
+                    মুনাফা-বণ্টন থেকে আসে।
+                  </p>
                 </div>
+              </div>
+              <div class="principle">
+                <div class="principle-icon prohibited">
+                  <i class="fas fa-question-circle"></i>
+                </div>
+                <div class="principle-content">
+                  <h4>কোনো ঘারার (অনিশ্চয়তা) নেই</h4>
+                  <p>
+                    সমস্ত চুক্তি স্পষ্ট কোনো অস্পষ্ট শর্ত বা অনুমানমূলক উপাদান
+                    ছাড়া।
+                  </p>
+                </div>
+              </div>
+              <div class="principle">
+                <div class="principle-icon prohibited">
+                  <i class="fas fa-dice"></i>
+                </div>
+                <div class="principle-content">
+                  <h4>কোনো মাইসির (জুয়া) নেই</h4>
+                  <p>আমরা জুয়া, অনুমান এবং অতিরিক্ত ঝুঁকি এড়িয়ে চলি।</p>
+                </div>
+              </div>
             </div>
+            <a href="#" class="btn btn-outline">
+              <span>আমাদের শরিয়াহ সার্টিফিকেট দেখুন</span>
+              <i class="fas fa-download"></i>
+            </a>
+          </div>
+          <div class="shariah-visual">
+            <div class="certificate-display">
+              <div class="certificate-badge">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h3>শরিয়াহ সম্মতি সার্টিফিকেট</h3>
+              <p>ইসলামিক ফাইন্যান্স কনসাল্টিং দ্বারা জারি</p>
+              <p>বৈধ: ২০২৪ - ২০২৫</p>
+              <div class="advisory-board">
+                <h4>উপদেষ্টা পণ্ডিত</h4>
+                <div class="scholar">
+                  <div class="scholar-avatar">د</div>
+                  <div class="scholar-info">
+                    <span class="scholar-name">ড. আব্দুল্লাহ হাসান</span>
+                    <span class="scholar-degree"
+                      >পিএইচডি ইসলামিক ফাইন্যান্স, আল-আজহার</span
+                    >
+                  </div>
+                </div>
+                <div class="scholar">
+                  <div class="scholar-avatar">م</div>
+                  <div class="scholar-info">
+                    <span class="scholar-name">মুফতি রহমান ফয়সাল</span>
+                    <span class="scholar-degree"
+                      >সার্টিফাইড ইসলামিক ফাইন্যান��স ���্রোফেশনাল</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section class="projects" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">বিনিয়োগ সুযোগ</span>
-                <h2 class="section-title">সক্রিয় প্রজেক্ট</h2>
-                <p class="section-subtitle">আকর্ষণীয় প্রত্যাশিত মুনাফা সহ সতর্কভাবে যাচাই করা শরিয়াহ-সম্মত প্রজেক্টে বিনিয়োগ করুন</p>
-            </div>
-            <div class="projects-filters">
-                <button class="filter-btn active" data-filter="all">সমস্ত প্রজেক্ট</button>
-                <button class="filter-btn" data-filter="business">ব্যবসা</button>
-                <button class="filter-btn" data-filter="real-estate">রিয়েল এস্টেট</button>
-                <button class="filter-btn" data-filter="agriculture">কৃষি</button>
-                <button class="filter-btn" data-filter="it-industry">আইটি শিল্প</button>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card" data-category="business">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop" alt="Sustainable Garments">
-                        <span class="project-badge">বিশেষ</span>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">টেকসই গার্মেন্টস ম্যানুফ্যাকচারিং</h3>
-                        <p class="project-sector">ব্যবসা / উৎপাদন</p>
-                        <div class="project-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 75%"></div>
-                            </div>
-                            <div class="progress-stats">
-                                <span>৳৭৫,০০,০০০ / ৳১,০০,০০,০০০</span>
-                                <span>৭৫%</span>
-                            </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="detail">
-                                <span class="detail-label">প্রত্যাশিত মুনাফা</span>
-                                <span class="detail-value">১৮-২২%</span>
-                            </div>
-                            <div class="detail">
-                                <span class="detail-label">বিনিয়োগ মেয়াদ</span>
-                                <span class="detail-value">১৮ মাস</span>
-                            </div>
-                            <div class="detail">
-                                <span class="detail-label">ন্যূনতম বিনিয়োগ</span>
-                                <span class="detail-value">৳১০,০০০</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-primary btn-full">এখনই বিনিয়োগ করুন</a>
-                    </div>
-                </div>
-                <div class="project-card" data-category="real-estate">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop" alt="Eco Resort">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">কোস্টাল ইকো রিসর্ট ডেভেলপমেন্ট</h3>
-                        <p class="project-sector">রিয়েল এস্টেট / পর্যটন</p>
-                        <div class="project-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 45%"></div>
-                            </div>
-                            <div class="progress-stats">
-                                <span>৳৪৫,০০,০০০ / ৳১,০০,০০,০০০</span>
-                                <span>৪৫%</span>
-                            </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="detail">
-                                <span class="detail-label">প্রত্যাশিত মুন���ফ���</span>
-                                <span class="detail-value">১৫-১৮%</span>
-                            </div>
-                            <div class="detail">
-                                <span class="detail-label">বিনিয়োগ মেয়াদ</span>
-                                <span class="detail-value">২৪ মাস</span>
-                            </div>
-                            <div class="detail">
-                                <span class="detail-label">ন্যূনতম বিনিয়োগ</span>
-                                <span class="detail-value">৳২৫,০০০</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-primary btn-full">এখনই বিনিয়োগ করুন</a>
-                    </div>
-                </div>
-                <div class="project-card" data-category="agriculture">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=250&fit=crop" alt="Organic Farm">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">অর্গানিক এগ্রি-বিজনেস ভেঞ্চার</h3>
-                        <p class="project-sector">কৃষি / খাদ্য</p>
-                        <div class="project-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 90%"></div>
-                            </div>
-                            <div class="progress-stats">
-                                <span>৳৯০,০০,০০০ / ৳১,০০,০০,০০০</span>
-                                <span>৯০%</span>
-                            </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="detail">
-                                <span class="detail-label">প্রত্যাশিত মুনাফা</span>
-                                <span class="detail-value">২০-২৫%</span>
-                            </div>
-                            <div class="detail">
-                                <span class="detail-label">বিনিয়োগ মেয়াদ</span>
-                                <span class="detail-value">১২ মাস</span>
-                            </div>
-                            <div class="detail">
-                                <span class="detail-label">ন্যূনতম বিনিয়োগ</span>
-                                <span class="detail-value">৳৫,০০০</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-primary btn-full">এখনই বিনিয়োগ করুন</a>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="it-industry">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=250&fit=crop" alt="Tech Startup Hub">
-                        <span class="project-badge">নতুন</span>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">টেক স্টার্টআপ হাব - সফটওয়্যার সলিউশন</h3>
-                        <p class="project-sector">আইটি শিল্প / সফটওয়্যার ডেভেলপমেন্ট</p>
-                        <div class="project-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 25%"></div>
-                            </div>
-                            <div class="progress-stats">
-                                <span>৳২৫,০০,০০০ / ৳১,০০,০০,০০০</span>
-                                <span>২৫%</span>
-                            </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="detail">
-                                <span class="detail-label">প্রত্যাশিত মুনাফা</span>
-                                <span class="detail-value">২২-২৮%</span>
-                            </div>
-                            <div class="detail">
-                                <span class="detail-label">বিনিয়োগের মেয়াদ</span>
-                                <span class="detail-value">২৪ মাস</span>
-                            </div>
-                            <div class="detail">
-                                <span class="detail-label">ন্যূনতম বিনিয়োগ</span>
-                                <span class="detail-value">৳১০,০০০</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-primary btn-full">এখনই বিনিয়োগ করুন</a>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="it-industry">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop" alt="Hardware Tech">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">হার্ডওয়্যার টেক অ্যাসেম্বলি প্ল্যান্ট</h3>
-                        <p class="project-sector">আইটি শিল্প / হার্ডওয়্যার ম্যানুফ্যাকচারিং</p>
-                        <div class="project-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 10%"></div>
-                            </div>
-                            <div class="progress-stats">
-                                <span>৳১০,০০,০০০ / ৳১,০০,০০,০০০</span>
-                                <span>১০%</span>
-                            </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="detail">
-                                <span class="detail-label">প্রত্যাশিত মুনাফা</span>
-                                <span class="detail-value">২০-২৫%</span>
-                            </div>
-                            <div class="detail">
-                                <span class="detail-label">বিনিয়োগের মেয়াদ</span>
-                                <span class="detail-value">৩৬ মাস</span>
-                            </div>
-                            <div class="detail">
-                                <span class="detail-label">ন্যূনতম বিনিয়োগ</span>
-                                <span class="detail-value">৳১৫,০০০</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-primary btn-full">এখনই বিনিয়োগ করুন</a>
-                    </div>
-                </div>
-            </div>
-            <div class="projects-cta">
-                <a href="#" class="btn btn-secondary">
-                    <span>সমস্ত প্রজেক্ট দেখুন</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">বিনিয়োগ সুযোগ</span>
+          <h2 class="section-title">সক্রিয় প্রজেক্ট</h2>
+          <p class="section-subtitle">
+            আকর্ষণীয় প্রত্যাশিত মুনাফা সহ সতর্কভাবে যাচাই করা শরিয়াহ-সম্মত
+            প্রজেক্টে বিনিয়োগ করুন
+          </p>
         </div>
+        <div class="projects-filters">
+          <button class="filter-btn active" data-filter="all">
+            সমস্ত প্রজেক্ট
+          </button>
+          <button class="filter-btn" data-filter="business">ব্যবসা</button>
+          <button class="filter-btn" data-filter="real-estate">
+            রিয়েল এস্টেট
+          </button>
+          <button class="filter-btn" data-filter="agriculture">কৃষি</button>
+          <button class="filter-btn" data-filter="it-industry">
+            আইটি শিল্প
+          </button>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card" data-category="business">
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop"
+                alt="Sustainable Garments"
+              />
+              <span class="project-badge">বিশেষ</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">টেকসই গার্মেন্টস ম্যানুফ্যাকচারিং</h3>
+              <p class="project-sector">ব্যবসা / উৎপাদন</p>
+              <div class="project-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 75%"></div>
+                </div>
+                <div class="progress-stats">
+                  <span>৳৭৫,০০,০০০ / ৳১,০০,০০,০০০</span>
+                  <span>৭৫%</span>
+                </div>
+              </div>
+              <div class="project-details">
+                <div class="detail">
+                  <span class="detail-label">প্রত্যাশিত মুনাফা</span>
+                  <span class="detail-value">১৮-২২%</span>
+                </div>
+                <div class="detail">
+                  <span class="detail-label">বিনিয়োগ মেয়াদ</span>
+                  <span class="detail-value">১৮ মাস</span>
+                </div>
+                <div class="detail">
+                  <span class="detail-label">ন্যূনতম বিনিয়োগ</span>
+                  <span class="detail-value">৳১০,০০০</span>
+                </div>
+              </div>
+              <a href="#" class="btn btn-primary btn-full"
+                >এখনই বিনিয়োগ করুন</a
+              >
+            </div>
+          </div>
+          <div class="project-card" data-category="real-estate">
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop"
+                alt="Eco Resort"
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">কোস্টাল ইকো রিসর্ট ডেভেলপমেন্ট</h3>
+              <p class="project-sector">রিয়েল এস্টেট / পর্যটন</p>
+              <div class="project-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 45%"></div>
+                </div>
+                <div class="progress-stats">
+                  <span>৳৪৫,০০,০০০ / ৳১,০০,০০,০০০</span>
+                  <span>৪৫%</span>
+                </div>
+              </div>
+              <div class="project-details">
+                <div class="detail">
+                  <span class="detail-label">প্রত্যাশিত মুন���ফ���</span>
+                  <span class="detail-value">১৫-১৮%</span>
+                </div>
+                <div class="detail">
+                  <span class="detail-label">বিনিয়োগ মেয়াদ</span>
+                  <span class="detail-value">২৪ মাস</span>
+                </div>
+                <div class="detail">
+                  <span class="detail-label">ন্যূনতম বিনিয়োগ</span>
+                  <span class="detail-value">৳২৫,০০০</span>
+                </div>
+              </div>
+              <a href="#" class="btn btn-primary btn-full"
+                >এখনই বিনিয়োগ করুন</a
+              >
+            </div>
+          </div>
+          <div class="project-card" data-category="agriculture">
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=250&fit=crop"
+                alt="Organic Farm"
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">অর্গানিক এগ্রি-বিজনেস ভেঞ্চার</h3>
+              <p class="project-sector">কৃষি / খাদ্য</p>
+              <div class="project-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 90%"></div>
+                </div>
+                <div class="progress-stats">
+                  <span>৳৯০,০০,০০০ / ৳১,০০,০০,০০০</span>
+                  <span>৯০%</span>
+                </div>
+              </div>
+              <div class="project-details">
+                <div class="detail">
+                  <span class="detail-label">প্রত্যাশিত মুনাফা</span>
+                  <span class="detail-value">২০-২৫%</span>
+                </div>
+                <div class="detail">
+                  <span class="detail-label">বিনিয়োগ মেয়াদ</span>
+                  <span class="detail-value">১২ মাস</span>
+                </div>
+                <div class="detail">
+                  <span class="detail-label">ন্যূনতম বিনিয়োগ</span>
+                  <span class="detail-value">৳৫,০০০</span>
+                </div>
+              </div>
+              <a href="#" class="btn btn-primary btn-full"
+                >এখনই বিনিয়োগ করুন</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card" data-category="it-industry">
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=250&fit=crop"
+                alt="Tech Startup Hub"
+              />
+              <span class="project-badge">নতুন</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">
+                টেক স্টার্টআপ হাব - সফটওয়্যার সলিউশন
+              </h3>
+              <p class="project-sector">আইটি শিল্প / সফটওয়্যার ডেভেলপমেন্ট</p>
+              <div class="project-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 25%"></div>
+                </div>
+                <div class="progress-stats">
+                  <span>৳২৫,০০,০০০ / ৳১,০০,০০,০০০</span>
+                  <span>২৫%</span>
+                </div>
+              </div>
+              <div class="project-details">
+                <div class="detail">
+                  <span class="detail-label">প্রত্যাশিত মুনাফা</span>
+                  <span class="detail-value">২২-২৮%</span>
+                </div>
+                <div class="detail">
+                  <span class="detail-label">বিনিয়োগের মেয়াদ</span>
+                  <span class="detail-value">২৪ মাস</span>
+                </div>
+                <div class="detail">
+                  <span class="detail-label">ন্যূনতম বিনিয়োগ</span>
+                  <span class="detail-value">৳১০,০০০</span>
+                </div>
+              </div>
+              <a href="#" class="btn btn-primary btn-full"
+                >এখনই বিনিয়োগ করুন</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card" data-category="it-industry">
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop"
+                alt="Hardware Tech"
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">
+                হার্ডওয়্যার টেক অ্যাসেম্বলি প্ল্যান্ট
+              </h3>
+              <p class="project-sector">
+                আইটি শিল্প / হার্ডওয়্যার ম্যানুফ্যাকচারিং
+              </p>
+              <div class="project-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 10%"></div>
+                </div>
+                <div class="progress-stats">
+                  <span>৳১০,০০,০০০ / ৳১,০০,০০,০০০</span>
+                  <span>১০%</span>
+                </div>
+              </div>
+              <div class="project-details">
+                <div class="detail">
+                  <span class="detail-label">প্রত্যাশিত মুনাফা</span>
+                  <span class="detail-value">২০-২৫%</span>
+                </div>
+                <div class="detail">
+                  <span class="detail-label">বিনিয়োগের মেয়াদ</span>
+                  <span class="detail-value">৩৬ মাস</span>
+                </div>
+                <div class="detail">
+                  <span class="detail-label">ন্যূনতম বিনিয়োগ</span>
+                  <span class="detail-value">৳১৫,০০০</span>
+                </div>
+              </div>
+              <a href="#" class="btn btn-primary btn-full"
+                >এখনই বিনিয়োগ করুন</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="projects-cta">
+          <a href="#" class="btn btn-secondary">
+            <span>সমস্ত প্রজেক্ট দেখুন</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
     </section>
 
-<!-- Testimonials -->
+    <!-- Testimonials -->
     <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">সদস্যদের মন্তব্য</span>
-                <h2 class="section-title">আমাদের সদস্যরা কী বলেন</h2>
-            </div>
-            <div class="testimonials-slider" id="testimonialsSlider">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="আতাউর রহমান" class="testimonial-avatar-img">
-                        <div class="testimonial-info">
-                            <h4>আতাউর রহমান</h4>
-                            <span class="testimonial-designation">প্রধান শিক্ষক, নোবল রেসিডেনশিয়াল স্কুল</span>
-                            <span class="testimonial-location"><i class="fas fa-map-marker-alt"></i> রংপুর</span>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"আমি স্কেলেবল এবং স্মার্ট সিস্টেম তৈরিতে প্রতিশ্রুতিবদ্ধ।"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="মোহাম্মদ শাহনেওয়াজ" class="testimonial-avatar-img">
-                        <div class="testimonial-info">
-                            <h4>মোহাম্মদ শাহনেওয়াজ</h4>
-                            <span class="testimonial-designation">সফটওয়্যার ইঞ্জিনিয়ার, বাংলালিংক</span>
-                            <span class="testimonial-location"><i class="fas fa-map-marker-alt"></i> ঢাকা</span>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"একসাথে কাজ করলে আমরা বেশি অর্জন করতে পারি।"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="জায়েদ হোসেন" class="testimonial-avatar-img">
-                        <div class="testimonial-info">
-                            <h4>জায়েদ হোসেন</h4>
-                            <span class="testimonial-designation">পরামর্শক, সার্ভে অ্যান্ড ডেটা কনসালটেন্ট</span>
-                            <span class="testimonial-location"><i class="fas fa-map-marker-alt"></i> ঢাকা</span>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"ঐক্য আমাদের শক্তি, অগ্রগতি আমাদের লক্ষ্য।"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="এলিয়াস হোসেন" class="testimonial-avatar-img">
-                        <div class="testimonial-info">
-                            <h4>এলিয়াস হোসেন</h4>
-                            <span class="testimonial-designation">সিনিয়র ইঞ্জিনিয়ার, মর্গান ইন্টারন্যাশনাল</span>
-                            <span class="testimonial-location"><i class="fas fa-map-marker-alt"></i> ঢাকা</span>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"আমি ক্রমাগত শেখা এবং উন্নতিতে বিশ্বাস করি।"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="জিয়াদ আলী" class="testimonial-avatar-img">
-                        <div class="testimonial-info">
-                            <h4>জিয়াদ আলী</h4>
-                            <span class="testimonial-designation">অপারেশন ইঞ্জিনিয়ার, লিডস কর্পোরেশন</span>
-                            <span class="testimonial-location"><i class="fas fa-map-marker-alt"></i> ঢাকা</span>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"জিয়াদ আলী থেকে পরীক্ষা।"</p>
-                </div>
-                <!-- Duplicate for infinite scroll -->
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="আতাউর রহমান" class="testimonial-avatar-img">
-                        <div class="testimonial-info">
-                            <h4>আতাউর রহমান</h4>
-                            <span class="testimonial-designation">প্রধান শিক্ষক, নোবল রেসিডেনশিয়াল স্কুল</span>
-                            <span class="testimonial-location"><i class="fas fa-map-marker-alt"></i> রংপুর</span>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"আমি স্কেলেবল এবং স্মার্ট সিস্টেম তৈরিতে প্রতিশ্রুতিবদ্ধ।"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="মোহাম্মদ শাহনেওয়াজ" class="testimonial-avatar-img">
-                        <div class="testimonial-info">
-                            <h4>মোহাম্মদ শাহনেওয়াজ</h4>
-                            <span class="testimonial-designation">সফটওয়্যার ইঞ্জিনিয়ার, বাংলালিংক</span>
-                            <span class="testimonial-location"><i class="fas fa-map-marker-alt"></i> ঢাকা</span>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"একসাথে কাজ করলে আমরা বেশি অর্জন করতে পারি।"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="জায়েদ হোসেন" class="testimonial-avatar-img">
-                        <div class="testimonial-info">
-                            <h4>জায়েদ হোসেন</h4>
-                            <span class="testimonial-designation">পরামর্শক, সার্ভ��� অ্যান্ড ডেটা কনসালটেন্ট</span>
-                            <span class="testimonial-location"><i class="fas fa-map-marker-alt"></i> ঢাকা</span>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"ঐক্য আমাদের শক্তি, অগ্রগতি আমাদের লক্ষ্য।"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="এলিয়াস হোসেন" class="testimonial-avatar-img">
-                        <div class="testimonial-info">
-                            <h4>এলিয়াস হোসেন</h4>
-                            <span class="testimonial-designation">সিনিয়র ইঞ্জিনিয়ার, মর্গান ইন্টারন্যাশনাল</span>
-                            <span class="testimonial-location"><i class="fas fa-map-marker-alt"></i> ঢাকা</span>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"আমি ক্রমাগত শেখা এবং উন্নতিতে বিশ্বাস করি।"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="জিয়াদ আলী" class="testimonial-avatar-img">
-                        <div class="testimonial-info">
-                            <h4>জিয়াদ আলী</h4>
-                            <span class="testimonial-designation">অপারেশন ইঞ্জিনিয়ার, লিডস কর্পোরেশন</span>
-                            <span class="testimonial-location"><i class="fas fa-map-marker-alt"></i> ঢাকা</span>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"জিয়াদ আলী থেকে পরীক্ষা।"</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">সদস্যদের কণ্ঠস্বর</span>
+          <h2 class="section-title">আমাদের সদস্যরা কি বলেন</h2>
         </div>
+        <div class="testimonials-slider" id="testimonialsSlider">
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="আতাউর রহমান"
+                class="testimonial-avatar-img"
+              />
+              <div class="testimonial-info">
+                <h4>আতাউর রহমান</h4>
+                <div class="testimonial-detail">
+                  <i class="fas fa-briefcase"></i>
+                  <span>প্রধান শিক্ষক</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-building"></i>
+                  <span>নোবল রেসিডেনশিয়াল স্কুল</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>রংপুর</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-text-wrapper">
+              <p class="testimonial-text">
+                "আমি স্কেলেবল এবং স্মার্ট সিস্টেম তৈরিতে প্রতিশ্রুতিবদ্ধ।"
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <img
+                src="https://randomuser.me/api/portraits/men/45.jpg"
+                alt="মোহাম্মদ শাহনেওয়াজ"
+                class="testimonial-avatar-img"
+              />
+              <div class="testimonial-info">
+                <h4>মোহাম্মদ শাহনেওয়াজ</h4>
+                <div class="testimonial-detail">
+                  <i class="fas fa-briefcase"></i>
+                  <span>সফটওয়্যার ইঞ্জিনিয়ার</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-building"></i>
+                  <span>বাংলালিংক</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Dhaka</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-text-wrapper">
+              <p class="testimonial-text">
+                "একসাথে কাজ করলে আমরা বেশি অর্জন করতে পারি।"
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <img
+                src="https://randomuser.me/api/portraits/men/52.jpg"
+                alt="জায়েদ হোসেন"
+                class="testimonial-avatar-img"
+              />
+              <div class="testimonial-info">
+                <h4>জায়েদ হোসেন</h4>
+                <div class="testimonial-detail">
+                  <i class="fas fa-briefcase"></i>
+                  <span>পরামর্শক</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-building"></i>
+                  <span>সার্ভে অ্যান্ড ডেটা</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Dhaka</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-text-wrapper">
+              <p class="testimonial-text">
+                "ঐক্য আমাদের শক্তি, অগ্রগতি আমাদের লক্ষ্য।"
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <img
+                src="https://randomuser.me/api/portraits/men/62.jpg"
+                alt="এলিয়াস হোসেন"
+                class="testimonial-avatar-img"
+              />
+              <div class="testimonial-info">
+                <h4>এলিয়াস হোসেন</h4>
+                <div class="testimonial-detail">
+                  <i class="fas fa-briefcase"></i>
+                  <span>সিনিয়র ইঞ্জিনিয়ার</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-building"></i>
+                  <span>Morgan International</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Dhaka</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-text-wrapper">
+              <p class="testimonial-text">
+                "আমি ক্রমাগত শেখা এবং উন্নতিতে বিশ্বাস করি।"
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <img
+                src="https://randomuser.me/api/portraits/men/75.jpg"
+                alt="জিয়াদ আলী"
+                class="testimonial-avatar-img"
+              />
+              <div class="testimonial-info">
+                <h4>জিয়াদ আলী</h4>
+                <div class="testimonial-detail">
+                  <i class="fas fa-briefcase"></i>
+                  <span>অপারেশন ইঞ্জিনিয়ার</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-building"></i>
+                  <span>লিডস কর্পোরেশন</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Dhaka</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-text-wrapper">
+              <p class="testimonial-text">"নিরাপদ বিনিয়োগে আমার বিশ্বাস।"</p>
+            </div>
+          </div>
+          <!-- Duplicate for infinite scroll -->
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Ataur Rahman"
+                class="testimonial-avatar-img"
+              />
+              <div class="testimonial-info">
+                <h4>Ataur Rahman</h4>
+                <div class="testimonial-detail">
+                  <i class="fas fa-briefcase"></i>
+                  <span>Head Sir</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-building"></i>
+                  <span>Noble Residential School</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Rangpur</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-text-wrapper">
+              <p class="testimonial-text">
+                "আমি স্কেলেবল এবং স্মার্ট সিস্টেম তৈরিতে প্রতিশ্রুতিবদ্ধ।"
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <img
+                src="https://randomuser.me/api/portraits/men/45.jpg"
+                alt="মোহাম্মদ শাহনেওয়াজ"
+                class="testimonial-avatar-img"
+              />
+              <div class="testimonial-info">
+                <h4>মোহাম্মদ শাহনেওয়াজ</h4>
+                <div class="testimonial-detail">
+                  <i class="fas fa-briefcase"></i>
+                  <span>সফটওয়্যার ইঞ্জিনিয়ার</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-building"></i>
+                  <span>বাংলালিংক</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Dhaka</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-text-wrapper">
+              <p class="testimonial-text">
+                "একসাথে কাজ করলে আমরা বেশি অর্জন করতে পারি।"
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <img
+                src="https://randomuser.me/api/portraits/men/52.jpg"
+                alt="জায়েদ হোসেন"
+                class="testimonial-avatar-img"
+              />
+              <div class="testimonial-info">
+                <h4>জায়েদ হোসেন</h4>
+                <div class="testimonial-detail">
+                  <i class="fas fa-briefcase"></i>
+                  <span>পরামর্শক</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-building"></i>
+                  <span>সার্ভে অ্যান্ড ডেটা</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Dhaka</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-text-wrapper">
+              <p class="testimonial-text">
+                "ঐক্য আমাদের শক্তি, অগ্রগতি আমাদের লক্ষ্য।"
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <img
+                src="https://randomuser.me/api/portraits/men/62.jpg"
+                alt="এলিয়াস হোসেন"
+                class="testimonial-avatar-img"
+              />
+              <div class="testimonial-info">
+                <h4>এলিয়াস হোসেন</h4>
+                <div class="testimonial-detail">
+                  <i class="fas fa-briefcase"></i>
+                  <span>সিনিয়র ইঞ্জিনিয়ার</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-building"></i>
+                  <span>Morgan International</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Dhaka</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-text-wrapper">
+              <p class="testimonial-text">
+                "আমি ক্রমাগত শেখা এবং উন্নতিতে বিশ্বাস করি।"
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <img
+                src="https://randomuser.me/api/portraits/men/75.jpg"
+                alt="জিয়াদ আলী"
+                class="testimonial-avatar-img"
+              />
+              <div class="testimonial-info">
+                <h4>জিয়াদ আলী</h4>
+                <div class="testimonial-detail">
+                  <i class="fas fa-briefcase"></i>
+                  <span>অপারেশন ইঞ্জিনিয়ার</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-building"></i>
+                  <span>লিডস কর্পোরেশন</span>
+                </div>
+                <div class="testimonial-detail">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Dhaka</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-text-wrapper">
+              <p class="testimonial-text">"নিরাপদ বিনিয়োগে আমার বিশ্বাস।"</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section" id="register">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">আপনার বিনিয়োগ যাত্রা শুরু করতে প্রস্তুত?</h2>
-                <p class="cta-subtitle">হাজার হাজার বিনিয়োগকারীদের সাথে নৈতিক, শরিয়াহ-সম্মত সুযোগের মাধ্যমে সম্পদ গড়ে তুলুন।</p>
-                <div class="cta-form">
-                    <form class="register-form">
-                        <div class="form-group">
-                            <input type="text" id="reg-name" required>
-                            <label for="reg-name">পুরো নাম</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="reg-email" required>
-                            <label for="reg-email">ইমেইল ঠিকানা</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="reg-phone" required>
-                            <label for="reg-phone">ফোন নম্বর</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-large btn-full">
-                            <span>বিনামূল্যে অ্যাকাউন্ট তৈরি করুন</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </form>
-                    <p class="form-note">নিবন্ধন করলে আপনি আমাদের সেবার শর্তাবলী ও গোপনীয়তা নীতিতে সম্মত হন</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="cta-content">
+          <h2 class="cta-title">আপনার বিনিয়োগ যাত্রা শুরু করতে প্রস্তুত?</h2>
+          <p class="cta-subtitle">
+            হাজার হাজার বিনিয়োগকারীদের সাথে নৈতিক, শরিয়াহ-সম্মত সুযোগের
+            মাধ্যমে সম্পদ গড়ে তুলুন।
+          </p>
+          <div class="cta-form">
+            <form class="register-form">
+              <div class="form-group">
+                <input type="text" id="reg-name" required />
+                <label for="reg-name">পুরো নাম</label>
+              </div>
+              <div class="form-group">
+                <input type="email" id="reg-email" required />
+                <label for="reg-email">ইমেইল ঠিকানা</label>
+              </div>
+              <div class="form-group">
+                <input type="tel" id="reg-phone" required />
+                <label for="reg-phone">ফোন নম্বর</label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-large btn-full">
+                <span>বিনামূল্যে অ্যাকাউন্ট তৈরি করুন</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </form>
+            <p class="form-note">
+              নিবন্ধন করলে আপনি আমাদের সেবার শর্তাবলী ও গোপনীয়তা নীতিতে সম্মত
+              হন
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Policies -->
     <section class="policies" id="policies">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">গুরুত্বপূর্ণ তথ্য</span>
-                <h2 class="section-title">নীতিমালা ও প্রবিধান</h2>
-            </div>
-            <div class="policies-grid">
-                <a href="#" class="policy-card" data-modal="membership">
-                    <div class="policy-icon"><i class="fas fa-file-contract"></i></div>
-                    <h3>সদস্যপদের শর্তাবলী</h3>
-                    <p>ইউনিটি মাইক্রোফান্ডে যোগদানের নিয়ম ও প্রয়োজনীয়তা</p>
-                    <i class="fas fa-arrow-right policy-arrow"></i>
-                </a>
-                <a href="#" class="policy-card" data-modal="investment">
-                    <div class="policy-icon"><i class="fas fa-handshake"></i></div>
-                    <h3>বিনিয়োগ চুক্তি</h3>
-                    <p>প্রজেক্টে বিনিয়োগ পরিচালনার শর্তাবলী</p>
-                    <i class="fas fa-arrow-right policy-arrow"></i>
-                </a>
-                <a href="#" class="policy-card" data-modal="withdrawal">
-                    <div class="policy-icon"><i class="fas fa-money-bill-wave"></i></div>
-                    <h3>উত্তোলন নীতি</h3>
-                    <p>তহবিল উত্তোলনের প্রক্রিয়া ও শর্ত</p>
-                    <i class="fas fa-arrow-right policy-arrow"></i>
-                </a>
-                <a href="#" class="policy-card" data-modal="transfer">
-                    <div class="policy-icon"><i class="fas fa-exchange-alt"></i></div>
-                    <h3>শেয়ার হস্তান্তর</h3>
-                    <p>বিনিয়োগ শেয়ার অন্যদের কিভাবে হস্তান্তর করবেন</p>
-                    <i class="fas fa-arrow-right policy-arrow"></i>
-                </a>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">গুরুত্বপূর্ণ তথ্য</span>
+          <h2 class="section-title">নীতিমালা ও প্রবিধান</h2>
         </div>
+        <div class="policies-grid">
+          <a href="#" class="policy-card" data-modal="membership">
+            <div class="policy-icon"><i class="fas fa-file-contract"></i></div>
+            <h3>সদস্যপদের শর্তাবলী</h3>
+            <p>ইউনিটি মাইক্রোফান্ডে যোগদানের নিয়ম ও প্রয়োজনীয়তা</p>
+            <i class="fas fa-arrow-right policy-arrow"></i>
+          </a>
+          <a href="#" class="policy-card" data-modal="investment">
+            <div class="policy-icon"><i class="fas fa-handshake"></i></div>
+            <h3>বিনিয়োগ চুক্তি</h3>
+            <p>প্রজেক্টে বিনিয়োগ পরিচালনার শর্তাবলী</p>
+            <i class="fas fa-arrow-right policy-arrow"></i>
+          </a>
+          <a href="#" class="policy-card" data-modal="withdrawal">
+            <div class="policy-icon">
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+            <h3>উত্তোলন নীতি</h3>
+            <p>তহবিল উত্তোলনের প্রক্রিয়া ও শর্ত</p>
+            <i class="fas fa-arrow-right policy-arrow"></i>
+          </a>
+          <a href="#" class="policy-card" data-modal="transfer">
+            <div class="policy-icon"><i class="fas fa-exchange-alt"></i></div>
+            <h3>শেয়ার হস্তান্তর</h3>
+            <p>বিনিয়োগ শেয়ার অন্যদের কিভাবে হস্তান্তর করবেন</p>
+            <i class="fas fa-arrow-right policy-arrow"></i>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="faq" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">প্রশ্ন ও উত্তর</span>
-                <h2 class="section-title">সচ্চার প্রশ্নাবলী</h2>
-            </div>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>ইউনিটি মাইক্রোফান্ড কিভাবে কাজ করে?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>ইউনিটি মাইক্রোফান্ড একটি সহযোগিতামূলক স্টাইল সঞ্চয় ও বিনিয়োগ গ্রুপ যেখানে সদস্যরা মাসিক সঞ্চয় প্রদান করে একটি সম্মিলিত তহবিল তৈরি করে। এই তহবিল বিভিন্ন শরিয়াহ-সম্মত ছোট ও মাঝারি ব্যবসা বা প্রজেক্টে বিনিয়োগ করা হয়। অর্জিত মুনাফা সদস্যদের বিনিয়োগের অনুপাতে বিতরণ করা হয়।</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>ইউনিটি মাইক্রোফান্ড কি শরিয়াহ সম্মত?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>হ্যাঁ, অবশ্যই। সমস্ত বিনিয়োগ ও মুনাফা বিতরণ ইসলামিক অর্থনীতির নীতি অনুসরণ করে। আমাদের প্রজেক্টগুলো শরিয়াহ উপদেষ্টা বোর্ড দ্বারা যাচাই করা হয়।</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>ন্যূনতম বিনিয়োগ কত?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>ন্যূনতম বিনিয়োগের পরিমাণ প্রজেক্ট অনুযায়ী ভিন্ন হয়। সাধারণত আপনি ৳৫,০০০ থেকে শুরু করতে পারেন।</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>কতটা পর পর মুনাফা বিতরণ হয়?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>প্রতিটি প্রজেক্টের নির্ধারিত সময়কালের শেষে মুনাফা গণনা করা হয় এ���ং তারপর বিতরণ করা হয়। কিছু প্রজেক্ট ত্রৈমাসিক বা অর্ধ-বার্ষিক বিতরণও করতে পারে।</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>আমি কি আমার বিনিয়োগ আগে তুলতে পারি?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>একবার প্রজেক্টে বিনিয়োগ করলে প্রজেক্ট শেষ হওয়ার আগে তুলা যাবে না। তবে প্রয়োজনে আপনি অন্য সদস্যের কাছে আপনার শেয়ার হস্তান্তর করতে পারবেন।</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>আমি কিভাবে যোগ দিতে পারি?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>শুধু "যোগ দিন" বাটন ক্লিক করুন এবং নিবন্ধন ফর্ম পূরণ করুন। আপনার আবেদন পর্যালোচনা করা হবে এবং অনুমোদনের পরে আপনি মাসিক অবদান শুরু করতে পারবেন।</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">প্রশ্ন ও উত্তর</span>
+          <h2 class="section-title">সচ্চার প্রশ্নাবলী</h2>
         </div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>ইউনিটি মাইক্রোফান্ড কিভাবে কাজ করে?</span>
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                ইউনিটি মাইক্রোফান্ড একটি সহযোগিতামূলক স্টাইল সঞ্চয় ও বিনিয়োগ
+                গ্রুপ যেখানে সদস্যরা মাসিক সঞ্চয় প্রদান করে একটি সম্মিলিত তহবিল
+                তৈরি করে। এই তহবিল বিভিন্ন শরিয়াহ-সম্মত ছোট ও মাঝারি ব্যবসা বা
+                প্রজেক্টে বিনিয়োগ করা হয়। অর্জিত মুনাফা সদস্যদের বিনিয়োগের
+                অনুপাতে বিতরণ করা হয়।
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>ইউনিটি মাইক্রোফান্ড কি শরিয়াহ সম্মত?</span>
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                হ্যাঁ, অবশ্যই। সমস্ত বিনিয়োগ ও মুনাফা বিতরণ ইসলামিক অর্থনীতির
+                নীতি অনুসরণ করে। আমাদের প্রজেক্টগুলো শরিয়াহ উপদেষ্টা বোর্ড
+                দ্বারা যাচাই করা হয়।
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>ন্যূনতম বিনিয়োগ কত?</span>
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                ন্যূনতম বিনিয়োগের পরিমাণ প্রজেক্ট অনুযায়ী ভিন্ন হয়। সাধারণত
+                আপনি ৳৫,০০০ থেকে শুরু করতে পারেন।
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>কতটা পর পর মুনাফা বিতরণ হয়?</span>
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                প্রতিটি প্রজেক্টের নির্ধারিত সময়কালের শেষে মুনাফা গণনা করা হয়
+                এ���ং তারপর বিতরণ করা হয়। কিছু প্রজেক্ট ত্রৈমাসিক বা
+                অর্ধ-বার্ষিক বিতরণও করতে পারে।
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>আমি কি আমার বিনিয়োগ আগে তুলতে পারি?</span>
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                একবার প্রজেক্টে বিনিয়োগ করলে প্রজেক্ট শেষ হওয়ার আগে তুলা যাবে
+                না। তবে প্রয়োজনে আপনি অন্য সদস্যের কাছে আপনার শেয়ার হস্তান্তর
+                করতে পারবেন।
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>আমি কিভাবে যোগ দিতে পারি?</span>
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                শুধু "যোগ দিন" বাটন ক্লিক করুন এবং নিবন্ধন ফর্ম পূরণ করুন। আপনার
+                আবেদন পর্যালোচনা করা হবে এবং অনুমোদনের পরে আপনি মাসিক অবদান শুরু
+                করতে পারবেন।
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <span class="section-tag">যোগাযোগ করুন</span>
-                    <h2 class="section-title">আমাদের সাথে যোগাযোগ</h2>
-                    <p class="section-subtitle">প্রশ্ন আছে? আমরা সাহায্য করতে এখানে আছি। যেকোনো মাধ্যমে যোগাযোগ করুন।</p>
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="method-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="method-details">
-                                <h4>অফিস ঠিকানা</h4>
-                                <p>বাড়ি #৪২, রোড #৫, ধানমন্ডি<br>ঢাকা ১২০৯, বাংলাদেশ</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="method-icon"><i class="fas fa-phone-alt"></i></div>
-                            <div class="method-details">
-                                <h4>ফোন</h4>
-                                <p>০১৭১৭৬৭৮১৩৪</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="method-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="method-details">
-                                <h4>ইমেইল</h4>
-                                <p>unitymicrofund@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="method-icon"><i class="fas fa-clock"></i></div>
-                            <div class="method-details">
-                                <h4>অফিস সময়</h4>
-                                <p>রবি - বৃহস্পতি: সকাল ৯:০০ - বিকাল ৬:০০</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
+      <div class="container">
+        <div class="contact-content">
+          <div class="contact-info">
+            <span class="section-tag">যোগাযোগ করুন</span>
+            <h2 class="section-title">আমাদের সাথে যোগাযোগ</h2>
+            <p class="section-subtitle">
+              প্রশ্ন আছে? আমরা সাহায্য করতে এখানে আছি। যেকোনো মাধ্যমে যোগাযোগ
+              করুন।
+            </p>
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="method-icon">
+                  <i class="fas fa-map-marker-alt"></i>
                 </div>
-                <div class="contact-form-wrapper">
-                    <form class="contact-form">
-                        <h3>আমাদের একটি বার্তা পাঠান</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="text" id="contact-name" required>
-                                <label for="contact-name">আপনার নাম</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" id="contact-email" required>
-                                <label for="contact-email">ইমেইল ঠিকানা</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="contact-phone">
-                            <label for="contact-phone">ফোন নম্বর (ঐচ্ছিক)</label>
-                        </div>
-                        <div class="form-group">
-                            <select id="contact-subject" required>
-                                <option value="" disabled selected></option>
-                                <option value="general">সাধারণ জিজ্ঞাসা</option>
-                                <option value="investment">বিনিয়োগ প্রশ্ন</option>
-                                <option value="support">প্রযুক্তিগত সহায়তা</option>
-                                <option value="complaint">অভিযোগ</option>
-                            </select>
-                            <label for="contact-subject" class="select-label">বিষয়</label>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="contact-message" rows="4" required></textarea>
-                            <label for="contact-message">আপনার বার্তা</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">
-                            <span>বার্তা পাঠান</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
+                <div class="method-details">
+                  <h4>অফিস ঠিকানা</h4>
+                  <p>
+                    টাওয়ার গলি, আরশি নগর<br />আতিবাজার, কেরানিগঞ্জ, ঢাকা ১৬০৯,
+                    বাংলাদেশ
+                  </p>
                 </div>
+              </div>
+              <div class="contact-method">
+                <div class="method-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="method-details">
+                  <h4>ফোন</h4>
+                  <p>০১৭১৭৬৭৮১৩৪</p>
+                </div>
+              </div>
+              <div class="contact-method">
+                <div class="method-icon"><i class="fas fa-envelope"></i></div>
+                <div class="method-details">
+                  <h4>ইমেইল</h4>
+                  <p>unitymicrofund@gmail.com</p>
+                </div>
+              </div>
+              <div class="contact-method">
+                <div class="method-icon"><i class="fas fa-clock"></i></div>
+                <div class="method-details">
+                  <h4>অফিস সময়</h4>
+                  <p>রবি - বৃহস্পতি: সকাল ৯:০০ - বিকাল ৬:০০</p>
+                </div>
+              </div>
             </div>
+            <div class="social-links">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="contact-form-wrapper">
+            <form class="contact-form">
+              <h3>আমাদের একটি বার্তা পাঠান</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" id="contact-name" required />
+                  <label for="contact-name">আপনার নাম</label>
+                </div>
+                <div class="form-group">
+                  <input type="email" id="contact-email" required />
+                  <label for="contact-email">ইমেইল ঠিকানা</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="tel" id="contact-phone" />
+                <label for="contact-phone">ফোন নম্বর (ঐচ্ছিক)</label>
+              </div>
+              <div class="form-group">
+                <select id="contact-subject" required>
+                  <option value="" disabled selected></option>
+                  <option value="general">সাধারণ জিজ্ঞাসা</option>
+                  <option value="investment">বিনিয়োগ প্রশ্ন</option>
+                  <option value="support">প্রযুক্তিগত সহায়তা</option>
+                  <option value="complaint">অভিযোগ</option>
+                </select>
+                <label for="contact-subject" class="select-label">বিষয়</label>
+              </div>
+              <div class="form-group">
+                <textarea id="contact-message" rows="4" required></textarea>
+                <label for="contact-message">আপনার বার্তা</label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">
+                <span>বার্তা পাঠান</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <div class="footer-brand">
-                        <a href="index-bn.html" class="logo">
-                            <img src="sources/logo.png" alt="Unity MicroFund" class="logo-img">
-                            <div class="logo-text">
-                                <span class="logo-name">ইউনিটি মাইক্রোফান্ড</span>
-                                <span class="logo-tagline">শরিয়াহ সম্মত</span>
-                            </div>
-                        </a>
-                        <p>বাংলাদেশের নিরাশ্রয় শরিয়াহ-সম্মত মাইক্রো-বিনিয়োগ প্ল্যাটফর্ম।</p>
-                        
-                        <!-- Social Links -->
-                        <div class="footer-social">
-                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        </div>
-                        
-                        <!-- Trust Badges -->
-                        <div class="footer-badges">
-                            <div class="footer-badge">
-                                <i class="fas fa-certificate"></i>
-                                <span>শরিয়াহ প্রত্যয়িত</span>
-                            </div>
-                            <div class="footer-badge">
-                                <i class="fas fa-shield-alt"></i>
-                                <span>নিরাপদ প্ল্যাটফর্ম</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Newsletter -->
-                    <div class="footer-newsletter">
-                        <h4>আপডেট থাকুন</h4>
-                        <p>সর্বশেষ খবর ও বিনিয়োগ সুযোগ পান।</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="আপনার ইমেইল ঠিকানা" required>
-                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                        </form>
-                    </div>
-                    
-                    <!-- Footer Links Accordion -->
-                    <div class="footer-links">
-                        <div class="footer-column">
-                            <div class="footer-column-header">
-                                <h4>দ্রুত লিংক</h4>
-                                <i class="fas fa-chevron-down footer-column-arrow"></i>
-                            </div>
-                            <ul>
-                                <li><a href="#about">আমাদের সম্পর্কে</a></li>
-                                <li><a href="#how-it-works">কিভাবে কাজ ক���ে</a></li>
-                                <li><a href="#shariah">শরিয়াহ সম্মতি</a></li>
-                                <li><a href="#projects">প্রজেক্ট</a></li>
-                                <li><a href="#policies">নীতিমালা</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <div class="footer-column-header">
-                                <h4>রিসোর্স</h4>
-                                <i class="fas fa-chevron-down footer-column-arrow"></i>
-                            </div>
-                            <ul>
-                                <li><a href="#">প্রায়সম্পন্ন প্রশ্ন</a></li>
-                                <li><a href="#">ইসলামিক ফাইন্যান্স শব্দকোষ</a></li>
-                                <li><a href="#">ব্লগ</a></li>
-                                <li><a href="#">খবর ও আপডেট</a></li>
-                                <li><a href="#">বার্ষিক রিপোর্ট</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <div class="footer-column-header">
-                                <h4>আইনি</h4>
-                                <i class="fas fa-chevron-down footer-column-arrow"></i>
-                            </div>
-                            <ul>
-                                <li><a href="#">সেবার শর্তাবলী</a></li>
-                                <li><a href="#">গোপনীয়তা নীতি</a></li>
-                                <li><a href="#">অস্বীকৃতি</a></li>
-                                <li><a href="#">অভিযোগ নীতি</a></li>
-                            </ul>
-                        </div>
-                    </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-main">
+            <div class="footer-brand">
+              <a href="index-bn.html" class="logo">
+                <img
+                  src="sources/logo.png"
+                  alt="Unity MicroFund"
+                  class="logo-img"
+                />
+                <div class="logo-text">
+                  <span class="logo-name">Unity MicroFund</span>
+                  <span class="logo-tagline">শরিয়াহ সম্মত</span>
                 </div>
-                <div class="footer-bottom">
-                    <p>© ২০২৪ ইউনিটি মাইক্রোফান্ড। সমস্ত অধিকার সংরক্ষিত।</p>
-                    <p class="footer-disclaimer">প্রজেক্টে বিনিয়োগে ঝুঁকি রয়েছে। অতীতের কার্য্যকারিতা ভবিষ্যতের মুনাফা নিশ্চিত করে না।</p>
+              </a>
+              <p>
+                বাংলাদেশের নিরাশ্রয় শরিয়াহ-সম্মত মাইক্রো-বিনিয়োগ প্ল্যাটফর্ম।
+              </p>
+
+              <!-- Social Links -->
+              <div class="footer-social">
+                <a href="#" class="social-link"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+
+              <!-- Trust Badges -->
+              <div class="footer-badges">
+                <div class="footer-badge">
+                  <i class="fas fa-certificate"></i>
+                  <span>শরিয়াহ প্রত্যয়িত</span>
                 </div>
+                <div class="footer-badge">
+                  <i class="fas fa-shield-alt"></i>
+                  <span>নিরাপদ প্ল্যাটফর্ম</span>
+                </div>
+              </div>
             </div>
+
+            <!-- Newsletter -->
+            <div class="footer-newsletter">
+              <h4>আপডেট থাকুন</h4>
+              <p>সর্বশেষ খবর ও বিনিয়োগ সুযোগ পান।</p>
+              <form class="newsletter-form">
+                <input type="email" placeholder="আপনার ইমেইল ঠিকানা" required />
+                <button type="submit">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+
+            <!-- Footer Links Accordion -->
+            <div class="footer-links">
+              <div class="footer-column">
+                <div class="footer-column-header">
+                  <h4>দ্রুত লিংক</h4>
+                  <i class="fas fa-chevron-down footer-column-arrow"></i>
+                </div>
+                <ul>
+                  <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                  <li><a href="#how-it-works">কিভাবে কাজ ক���ে</a></li>
+                  <li><a href="#shariah">শরিয়াহ সম্মতি</a></li>
+                  <li><a href="#projects">প্রজেক্ট</a></li>
+                  <li><a href="#policies">নীতিমালা</a></li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <div class="footer-column-header">
+                  <h4>রিসোর্স</h4>
+                  <i class="fas fa-chevron-down footer-column-arrow"></i>
+                </div>
+                <ul>
+                  <li><a href="#">প্রায়সম্পন্ন প্রশ্ন</a></li>
+                  <li><a href="#">ইসলামিক ফাইন্যান্স শব্দকোষ</a></li>
+                  <li><a href="#">ব্লগ</a></li>
+                  <li><a href="#">খবর ও আপডেট</a></li>
+                  <li><a href="#">বার্ষিক রিপোর্ট</a></li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <div class="footer-column-header">
+                  <h4>আইনি</h4>
+                  <i class="fas fa-chevron-down footer-column-arrow"></i>
+                </div>
+                <ul>
+                  <li><a href="#">সেবার শর্তাবলী</a></li>
+                  <li><a href="#">গোপনীয়তা নীতি</a></li>
+                  <li><a href="#">অস্বীকৃতি</a></li>
+                  <li><a href="#">অভিযোগ নীতি</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>© ২০২৪ ইউনিটি মাইক্রোফান্ড। সমস্ত অধিকার সংরক্ষিত।</p>
+            <p class="footer-disclaimer">
+              প্রজেক্টে বিনিয়োগে ঝুঁকি রয়েছে। অতীতের কার্য্যকারিতা ভবিষ্যতের
+              মুনাফা নিশ্চিত করে না।
+            </p>
+          </div>
         </div>
+      </div>
     </footer>
 
     <!-- Back to Top -->
     <a href="#home" class="back-to-top" id="back-to-top">
-        <i class="fas fa-arrow-up"></i>
+      <i class="fas fa-arrow-up"></i>
     </a>
 
     <!-- Policy Modals -->
     <div class="modal-overlay" id="modal-overlay">
-        <div class="modal-container">
-            <button class="modal-close" id="modal-close">&times;</button>
-            
-            <!-- Membership Terms Modal -->
-            <div class="modal-content" id="modal-membership">
-                <div class="modal-header">
-                    <div class="modal-icon"><i class="fas fa-file-contract"></i></div>
-                    <h2>সদস্যপদের শর্তাবলী</h2>
-                </div>
-                <div class="modal-body">
-                    <h3>১. যোগ্যতা</h3>
-                    <p>১৮ বছর বা তার বেশি বয়সী যে কোনো ব্যক্তি, অথবা বাংলাদেশে নিবন্ধিত যে কোনো আইনি সত্তা, নিবন্ধন প্রক্রিয়া সম্পন্ন করে এবং KYC প্রয়োজনীয়তা পূরণ করে ইউনিটি মাইক্রোফান্ডের সদস্য হতে পারবে।</p>
-                    
-                    <h3>২. নিবন্ধন প্রক্রিয়া</h3>
-                    <p>সদস্য হতে, আবেদনকারীদের অবশ্যই করতে হবে:</p>
-                    <ul>
-                        <li>সঠিক তথ্য সহ অনলাইন নিবন্ধন ফর্ম সম্পন্ন করা</li>
-                        <li>বৈধ সরকারি প্রদত্ত পরিচয় (NID/পাসপোর্ট) জমা দেওয়া</li>
-                        <li>ঠিকানার প্রমাণ জমা দেওয়া</li>
-                        <li>ইমেইল ও ফোন নম্বর যাচাই করা</li>
-                        <li>সেবার শর্তাবলীতে সম্মত হওয়া ও সম্মতি দেওয়া</li>
-                    </ul>
-                    
-                    <h3>৩. সদস্যের দায়িত্ব</h3>
-                    <p>সদস্যদের অবশ্যই করতে হবে:</p>
-                    <ul>
-                        <li>সঠিক ও আপডেট প্রোফাইল তথ্য বজায় রাখা</li>
-                        <li>লগইন credential অন্যদের সাথে শেয়ার না করা</li>
-                        <li>যেকোনো সন্দেহজনক কার্যকলাপ তাৎক্ষণিক রিপোর্ট করা</li>
-                        <li>সমস্ত প্রযোজ্য আইন ও প্রবিধান মেনে চলা</li>
-                    </ul>
-                    
-                    <h3>৪. অ্যাকাউন্ট নিরাপত্তা</h3>
-                    <p>সদস্যরা তাদের অ্যাকাউন্টের নিরাপত্তা বজায় রাখার জন্য দায়ী এবং তাদের অ্যাকাউন্টের মাধ্যমে পরিচালিত যেকোনো কার্যকলাপের জন্য দায়ী থাকবেন। দুই-ফ্যাক্টর প্রমাণীকরণ পাওয়া যায় এবং সুপারিশ করা হয়।</p>
-                    
-                    <h3>৫. বিলুপ্তি</h3>
-                    <p>এই শর্ত ভঙ্গ করে বা প্রতারণামূলক কার্যকলাপে engaged যে কোনো সদস্যপদ বিলুপ্ত বা স্থগিত করার অধিকার ইউনিটি মাইক্রোফান্ড সংরক্ষণ করে।</p>
-                </div>
-            </div>
-            
-            <!-- Investment Agreement Modal -->
-            <div class="modal-content" id="modal-investment">
-                <div class="modal-header">
-                    <div class="modal-icon"><i class="fas fa-handshake"></i></div>
-                    <h2>বিনিয়োগ চুক্তি</h2>
-                </div>
-                <div class="modal-body">
-                    <h3>১. বিনিয়োগ প্রক্রিয়া</h3>
-                    <p>বিনিয়োগকারীরা ব্রাউজ করে প্রজেক্টে বিনিয়োগ করতে পারেন নিম্নলিখিত প্রক্রিয়ায়:</p>
-                    <ul>
-                        <li>সক্রিয় তালিকা থেকে একটি প্রজেক্ট বেছে নিন</li>
-                        <li>বিনিয়োগ পরিমাণ বেছে নিন (প্রজেক্ট অনুযায়ী ন্যূনতম পরিমাণ ভিন্ন হতে পারে)</li>
-                        <li>নির্ধারিত চ্যানেলের মাধ্যমে পেমেন্ট সম্পন্ন করা</li>
-                        <li>বিনিয়োগ নিশ্চিতকরণ ও প্রশংসাপত্র পান</li>
-                    </ul>
-                    
-                    <h3>২. মুনাফা বিতরণ</h3>
-                    <p>মুনাফা শরিয়াহ-সম্মত মুনাফা-বণ্টন চুক্তি অনুযায়ী বিতরণ করা হয়:</p>
-                    <ul>
-                        <li>প্রকৃত রিটার্নের উপর ভিত্তি করে প্রজেক্ট-ভিত্তিক হিসাবে মুনাফা গণনা করা হয়</li>
-                        <li>বিতরণ ত্রৈমাসিক বা প্রজেক্টের শর্ত অনুযায়ী হয়</li>
-                        <li>মুনাফা সদস্যের ওয়ালেট অ্যাকাউন্টে জমা দেওয়া হয়</li>
-                        <li>সদস্যরা পুনঃবিনিয়োগ বা উত্তোলন করতে পারেন</li>
-                    </ul>
-                    
-                    <h3>৩. ঝুঁকি প্রকাশ</h3>
-                    <p>সমস্ত বিনিয়োগে অন্তর্নিহিত ঝুঁকি রয়েছে। অতীতের কার্য্যকারিতা ভবিষ্যতের মুনাফা নিশ্চিত করে না। বিনিয়োগ করার আগে সদস্যদের প্রতিটি প্রজেক্ট সতর্কভাবে পর্যালোচনা করা উচিত।</p>
-                    
-                    <h3>৪. বিনিয়োগ সীমা</h3>
-                    <p>প্রতিটি প্রজেক্টে প্রতি সদস্যের সর্বোচ্চ বিনিয়োগ সীমা প্রজ��ক্টের বিবরণে নির্দিষ্ট। মোট বিনিয়োগ এক্সপোজার ঝুঁকি ব্যবস্থাপনার জন্য পর্যবেক্ষণ করা হয়।</p>
-                    
-                    <h3>৫. ডokumentation</h3>
-                    <p>সমস্ত বিনিয়োগ চুক্তি ডিজিটালি নথিভুক্ত এবং যেকোনো সময় সদস্যের ড্যাশবোর্ড থেকে অ্যাক্সেস করা যায়।</p>
-                </div>
-            </div>
-            
-            <!-- Withdrawal Policy Modal -->
-            <div class="modal-content" id="modal-withdrawal">
-                <div class="modal-header">
-                    <div class="modal-icon"><i class="fas fa-money-bill-wave"></i></div>
-                    <h2>উত্তোলন নীতি</h2>
-                </div>
-                <div class="modal-body">
-                    <h3>১. উত্তোলন যোগ্যতা</h3>
-                    <p>সদস্যরা নিম্নলিখিত শর্ত সাপেক্ষে তাদের বিনিয়োগ তহবিল ও মুনাফা উত্তোলন করতে পারেন:</p>
-                    <ul>
-                        <li>বিনিয়োগ মেয়াদ সম্পন্ন হয়েছে</li>
-                        <li>প্রজেক্ট বন্ধ এবং চূড়ান্ত সমন্বয় করা হয়েছে</li>
-                        <li>কোনো মুলতবি দায় বা বিরোধ নেই</li>
-                    </ul>
-                    
-                    <h3>২. উত্তোলন প্রক্রিয়া</h3>
-                    <p>তহবিল উত্তোলন করতে:</p>
-                    <ul>
-                        <li>ড্যাশবোর্ড থেকে উত্তোলন অনুরোধ জমা দিন</li>
-                        <li>উত্তোলন পদ্ধতি বেছে নিন (ব্যাংক ট্রান্সফার/bKash)</li>
-                        <li>যাচাই করা ব্যাংক অ্যাকাউন্টের বিবরণ দিন</li>
-                        <li>প্রসেসিংয়ে ৩-৭ ব্যবসায়িক দিন সময় লাগে</li>
-                    </ul>
-                    
-                    <h3>৩. উত্তোলন ফি</h3>
-                    <p>উত্তোলনের জন্য একটি নামমাত্র প্রসেসিং ফি প্রযোজ্য হতে পারে। বর্তমান হারের জন্য ফি সিডিউল দেখুন।</p>
-                    
-                    <h3>৪. সময়</h3>
-                    <p>উত্তোলন অনুরোধ ৭ ব্যবসায়িক দিনের মধ্যে প্রসেস করা হয়। পিক সময়ে সামান্য বিলম্ব হতে পারে।</p>
-                    
-                    <h3>৫. বিধিনিষেধ</h3>
-                    <p>চলমান প্রজেক্ট বিনিয়োগ বা নিয়ন্ত্রক তদন্তের সময় উত্তোলন সাময়িকভাবে সীমাবদ্ধ থাকতে পারে।</p>
-                </div>
-            </div>
-            
-            <!-- Share Transfer Modal -->
-            <div class="modal-content" id="modal-transfer">
-                <div class="modal-header">
-                    <div class="modal-icon"><i class="fas fa-exchange-alt"></i></div>
-                    <h2>শেয়ার হস্তান্তর নীতি</h2>
-                </div>
-                <div class="modal-body">
-                    <h3>১. হস্তান্তর যোগ্যতা</h3>
-                    <p>নিম্নলিখিত শর্ত সাপেক্ষে বিনিয়োগ শেয়ার অন্য ইউনিটি মাইক্রোফান্ড সদস্যদের হস্তান্তর করা যায়:</p>
-                    <ul>
-                        <li>উভয় পক্ষ যাচাই করা সদস্য হতে হবে</li>
-                        <li>বিনিয়োগ মেয়াদে হস্তান্তর অনুমোদিত হতে হবে</li>
-                        <li>বিনিয়োগে কোনো মুলতবি বিরোধ নেই</li>
-                    </ul>
-                    
-                    <h3>২. হস্তান্তর প্রক্রিয়া</h3>
-                    <p>শেয়ার হস্তান্তর করতে:</p>
-                    <ul>
-                        <li>বিনিয়োগ ড্যাশবোর্ড থেকে হস্তান্তর শ���রু করুন</li>
-                        <li>গ্রহীতা সদস্য ID দিন</li>
-                        <li>গ্রহীতাকে হস্তান্তর গ্রহণ করতে হবে</li>
-                        <li>নিশ্চিতকরণের পর হস্তান্তর সম্পন্ন হয়</li>
-                    </ul>
-                    
-                    <h3>৩. হস্তান্তর ফি</h3>
-                    <p>বর্তমান ফি সিডিউল অনুযায়ী হস্তান্তর প্রসেসিং ফি প্রযোজ্য। এটি প্রশাসনিক খরচ কভার করে।</p>
-                    
-                    <h3>৪. বিধিনিষেধ</h3>
-                    <p>নির্দিষ্ট বিনিয়োগে তাদের শর্তে বর্ণিত হস্তান্তর বিধিনিষেধ থাকতে পারে। সমস্ত প্রজেক্টে মধ্যবর্তী হস্তান্তর অনুমোদিত নয়।</p>
-                    
-                    <h3>৫. ডokumentation</h3>
-                    <p>সমস্ত হস্তান্তর নথিভুক্ত এবং রেকর্ডের জন্য উভয় পক্ষকে একটি ডিজিটাল সার্টিফিকেট প্রদান করা হয়।</p>
-                </div>
-            </div>
+      <div class="modal-container">
+        <button class="modal-close" id="modal-close">&times;</button>
+
+        <!-- Membership Terms Modal -->
+        <div class="modal-content" id="modal-membership">
+          <div class="modal-header">
+            <div class="modal-icon"><i class="fas fa-file-contract"></i></div>
+            <h2>সদস্যপদের শর্তাবলী</h2>
+          </div>
+          <div class="modal-body">
+            <h3>১. যোগ্যতা</h3>
+            <p>
+              ১৮ বছর বা তার বেশি বয়সী যে কোনো ব্যক্তি, অথবা বাংলাদেশে নিবন্ধিত
+              যে কোনো আইনি সত্তা, নিবন্ধন প্রক্রিয়া সম্পন্ন করে এবং KYC
+              প্রয়োজনীয়তা পূরণ করে ইউনিটি মাইক্রোফান্ডের সদস্য হতে পারবে।
+            </p>
+
+            <h3>২. নিবন্ধন প্রক্রিয়া</h3>
+            <p>সদস্য হতে, আবেদনকারীদের অবশ্যই করতে হবে:</p>
+            <ul>
+              <li>সঠিক তথ্য সহ অনলাইন নিবন্ধন ফর্ম সম্পন্ন করা</li>
+              <li>বৈধ সরকারি প্রদত্ত পরিচয় (NID/পাসপোর্ট) জমা দেওয়া</li>
+              <li>ঠিকানার প্রমাণ জমা দেওয়া</li>
+              <li>ইমেইল ও ফোন নম্বর যাচাই করা</li>
+              <li>সেবার শর্তাবলীতে সম্মত হওয়া ও সম্মতি দেওয়া</li>
+            </ul>
+
+            <h3>৩. সদস্যের দায়িত্ব</h3>
+            <p>সদস্যদের অবশ্যই করতে হবে:</p>
+            <ul>
+              <li>সঠিক ও আপডেট প্রোফাইল তথ্য বজায় রাখা</li>
+              <li>লগইন credential অন্যদের সাথে শেয়ার না করা</li>
+              <li>যেকোনো সন্দেহজনক কার্যকলাপ তাৎক্ষণিক রিপোর্ট করা</li>
+              <li>সমস্ত প্রযোজ্য আইন ও প্রবিধান মেনে চলা</li>
+            </ul>
+
+            <h3>৪. অ্যাকাউন্ট নিরাপত্তা</h3>
+            <p>
+              সদস্যরা তাদের অ্যাকাউন্টের নিরাপত্তা বজায় রাখার জন্য দায়ী এবং
+              তাদের অ্যাকাউন্টের মাধ্যমে পরিচালিত যেকোনো কার্যকলাপের জন্য দায়ী
+              থাকবেন। দুই-ফ্যাক্টর প্রমাণীকরণ পাওয়া যায় এবং সুপারিশ করা হয়।
+            </p>
+
+            <h3>৫. বিলুপ্তি</h3>
+            <p>
+              এই শর্ত ভঙ্গ করে বা প্রতারণামূলক কার্যকলাপে engaged যে কোনো
+              সদস্যপদ বিলুপ্ত বা স্থগিত করার অধিকার ইউনিটি মাইক্রোফান্ড সংরক্ষণ
+              করে।
+            </p>
+          </div>
         </div>
+
+        <!-- Investment Agreement Modal -->
+        <div class="modal-content" id="modal-investment">
+          <div class="modal-header">
+            <div class="modal-icon"><i class="fas fa-handshake"></i></div>
+            <h2>বিনিয়োগ চুক্তি</h2>
+          </div>
+          <div class="modal-body">
+            <h3>১. বিনিয়োগ প্রক্রিয়া</h3>
+            <p>
+              বিনিয়োগকারীরা ব্রাউজ করে প্রজেক্টে বিনিয়োগ করতে পারেন নিম্নলিখিত
+              প্রক্রিয়ায়:
+            </p>
+            <ul>
+              <li>সক্রিয় তালিকা থেকে একটি প্রজেক্ট বেছে নিন</li>
+              <li>
+                বিনিয়োগ পরিমাণ বেছে নিন (প্রজেক্ট অনুযায়ী ন্যূনতম পরিমাণ ভিন্ন
+                হতে পারে)
+              </li>
+              <li>নির্ধারিত চ্যানেলের মাধ্যমে পেমেন্ট সম্পন্ন করা</li>
+              <li>বিনিয়োগ নিশ্চিতকরণ ও প্রশংসাপত্র পান</li>
+            </ul>
+
+            <h3>২. মুনাফা বিতরণ</h3>
+            <p>
+              মুনাফা শরিয়াহ-সম্মত মুনাফা-বণ্টন চুক্তি অনুযায়ী বিতরণ করা হয়:
+            </p>
+            <ul>
+              <li>
+                প্রকৃত রিটার্নের উপর ভিত্তি করে প্রজেক্ট-ভিত্তিক হিসাবে মুনাফা
+                গণনা করা হয়
+              </li>
+              <li>বিতরণ ত্রৈমাসিক বা প্রজেক্টের শর্ত অনুযায়ী হয়</li>
+              <li>মুনাফা সদস্যের ওয়ালেট অ্যাকাউন্টে জমা দেওয়া হয়</li>
+              <li>সদস্যরা পুনঃবিনিয়োগ বা উত্তোলন করতে পারেন</li>
+            </ul>
+
+            <h3>৩. ঝুঁকি প্রকাশ</h3>
+            <p>
+              সমস্ত বিনিয়োগে অন্তর্নিহিত ঝুঁকি রয়েছে। অতীতের কার্য্যকারিতা
+              ভবিষ্যতের মুনাফা নিশ্চিত করে না। বিনিয়োগ করার আগে সদস্যদের
+              প্রতিটি প্রজেক্ট সতর্কভাবে পর্যালোচনা করা উচিত।
+            </p>
+
+            <h3>৪. বিনিয়োগ সীমা</h3>
+            <p>
+              প্রতিটি প্রজেক্টে প্রতি সদস্যের সর্বোচ্চ বিনিয়োগ সীমা প্রজ��ক্টের
+              বিবরণে নির্দিষ্ট। মোট বিনিয়োগ এক্সপোজার ঝুঁকি ব্যবস্থাপনার জন্য
+              পর্যবেক্ষণ করা হয়।
+            </p>
+
+            <h3>৫. ডকুমেন্টেশন</h3>
+            <p>
+              সমস্ত বিনিয়োগ চুক্তি ডিজিটালি নথিভুক্ত এবং যেকোনো সময় সদস্যের
+              ড্যাশবোর্ড থেকে অ্যাক্সেস করা যায়।
+            </p>
+          </div>
+        </div>
+
+        <!-- Withdrawal Policy Modal -->
+        <div class="modal-content" id="modal-withdrawal">
+          <div class="modal-header">
+            <div class="modal-icon"><i class="fas fa-money-bill-wave"></i></div>
+            <h2>উত্তোলন নীতি</h2>
+          </div>
+          <div class="modal-body">
+            <h3>১. উত্তোলন যোগ্যতা</h3>
+            <p>
+              সদস্যরা নিম্নলিখিত শর্ত সাপেক্ষে তাদের বিনিয়োগ তহবিল ও মুনাফা
+              উত্তোলন করতে পারেন:
+            </p>
+            <ul>
+              <li>বিনিয়োগ মেয়াদ সম্পন্ন হয়েছে</li>
+              <li>প্রজেক্ট বন্ধ এবং চূড়ান্ত সমন্বয় করা হয়েছে</li>
+              <li>কোনো মুলতবি দায় বা বিরোধ নেই</li>
+            </ul>
+
+            <h3>২. উত্তোলন প্রক্রিয়া</h3>
+            <p>তহবিল উত্তোলন করতে:</p>
+            <ul>
+              <li>ড্যাশবোর্ড থেকে উত্তোলন অনুরোধ জমা দিন</li>
+              <li>উত্তোলন পদ্ধতি বেছে নিন (ব্যাংক ট্রান্সফার/bKash)</li>
+              <li>যাচাই করা ব্যাংক অ্যাকাউন্টের বিবরণ দিন</li>
+              <li>প্রসেসিংয়ে ৩-৭ ব্যবসায়িক দিন সময় লাগে</li>
+            </ul>
+
+            <h3>৩. উত্তোলন ফি</h3>
+            <p>
+              উত্তোলনের জন্য একটি নামমাত্র প্রসেসিং ফি প্রযোজ্য হতে পারে।
+              বর্তমান হারের জন্য ফি সিডিউল দেখুন।
+            </p>
+
+            <h3>৪. সময়</h3>
+            <p>
+              উত্তোলন অনুরোধ ৭ ব্যবসায়িক দিনের মধ্যে প্রসেস করা হয়। পিক সময়ে
+              সামান্য বিলম্ব হতে পারে।
+            </p>
+
+            <h3>৫. বিধিনিষেধ</h3>
+            <p>
+              চলমান প্রজেক্ট বিনিয়োগ বা নিয়ন্ত্রক তদন্তের সময় উত্তোলন
+              সাময়িকভাবে সীমাবদ্ধ থাকতে পারে।
+            </p>
+          </div>
+        </div>
+
+        <!-- Share Transfer Modal -->
+        <div class="modal-content" id="modal-transfer">
+          <div class="modal-header">
+            <div class="modal-icon"><i class="fas fa-exchange-alt"></i></div>
+            <h2>শেয়ার হস্তান্তর নীতি</h2>
+          </div>
+          <div class="modal-body">
+            <h3>১. হস্তান্তর যোগ্যতা</h3>
+            <p>
+              নিম্নলিখিত শর্ত সাপেক্ষে বিনিয়োগ শেয়ার অন্য ইউনিটি মাইক্রোফান্ড
+              সদস্যদের হস্তান্তর করা যায়:
+            </p>
+            <ul>
+              <li>উভয় পক্ষ যাচাই করা সদস্য হতে হবে</li>
+              <li>বিনিয়োগ মেয়াদে হস্তান্তর অনুমোদিত হতে হবে</li>
+              <li>বিনিয়োগে কোনো মুলতবি বিরোধ নেই</li>
+            </ul>
+
+            <h3>২. হস্তান্তর প্রক্রিয়া</h3>
+            <p>শেয়ার হস্তান্তর করতে:</p>
+            <ul>
+              <li>বিনিয়োগ ড্যাশবোর্ড থেকে হস্তান্তর শ���রু করুন</li>
+              <li>গ্রহীতা সদস্য ID দিন</li>
+              <li>গ্রহীতাকে হস্তান্তর গ্রহণ করতে হবে</li>
+              <li>নিশ্চিতকরণের পর হস্তান্তর সম্পন্ন হয়</li>
+            </ul>
+
+            <h3>৩. হস্তান্তর ফি</h3>
+            <p>
+              বর্তমান ফি সিডিউল অনুযায়ী হস্তান্তর প্রসেসিং ফি প্রযোজ্য। এটি
+              প্রশাসনিক খরচ কভার করে।
+            </p>
+
+            <h3>৪. বিধিনিষেধ</h3>
+            <p>
+              নির্দিষ্ট বিনিয়োগে তাদের শর্তে বর্ণিত হস্তান্তর বিধিনিষেধ থাকতে
+              পারে। সমস্ত প্রজেক্টে মধ্যবর্তী হস্তান্তর অনুমোদিত নয়।
+            </p>
+
+            <h3>৫. ডokumentation</h3>
+            <p>
+              সমস্ত হস্তান্তর নথিভুক্ত এবং রেকর্ডের জন্য উভয় পক্ষকে একটি
+              ডিজিটাল সার্টিফিকেট প্রদান করা হয়।
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
