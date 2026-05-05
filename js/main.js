@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initBackToTop();
     initModal();
     initFooterAccordion();
+    initFAQs();
 });
 
 // ========================================
@@ -343,5 +344,28 @@ function initFooterAccordion() {
                 }
             });
         }
+    });
+}
+
+// ========================================
+// FAQ Accordion
+// ========================================
+function initFAQs() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', function() {
+            const isActive = item.classList.contains('active');
+            
+            // Close all items
+            faqItems.forEach(i => i.classList.remove('active'));
+            
+            // Toggle current item
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
     });
 }
