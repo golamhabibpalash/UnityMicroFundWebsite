@@ -1325,6 +1325,49 @@ button {
 .testimonials {
     padding: var(--space-9) 0;
     background: var(--surface);
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonials-slider {
+    display: flex;
+    gap: var(--space-5);
+    animation: slider 40s linear infinite;
+    width: max-content;
+}
+
+.testimonials-slider:hover {
+    animation-play-state: paused;
+}
+
+@keyframes slider {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.testimonials::before,
+.testimonials::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.testimonials::before {
+    left: 0;
+    background: linear-gradient(to right, var(--surface), transparent);
+}
+
+.testimonials::after {
+    right: 0;
+    background: linear-gradient(to left, var(--surface), transparent);
 }
 
 .testimonials-grid {
@@ -1337,6 +1380,80 @@ button {
     background: var(--background);
     padding: var(--space-5);
     border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    min-width: 350px;
+    max-width: 350px;
+    flex-shrink: 0;
+}
+
+/* ========================================
+   FAQ Section
+   ======================================== */
+.faq {
+    padding: var(--space-9) 0;
+    background: var(--background);
+}
+
+.faq-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: var(--primary-light);
+}
+
+.faq-question i {
+    font-size: 14px;
+    color: var(--primary);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 24px 20px;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
     border: 1px solid var(--border);
 }
 
