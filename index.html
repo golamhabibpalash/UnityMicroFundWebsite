@@ -21,9 +21,22 @@
 <body>
     <!-- Language Switcher - Fixed Right Side -->
     <div class="language-switcher">
-        <a href="index.html" class="lang-btn active" title="English">🇬🇧</a>
-        <a href="index-bn.html" class="lang-btn" title="বাংলা">🇧🇩</a>
+        <a href="index.html" class="lang-btn active" title="English" onclick="saveScrollPosition()">🇬🇧</a>
+        <a href="index-bn.html" class="lang-btn" title="বাংলা" onclick="saveScrollPosition()">🇧🇩</a>
     </div>
+
+    <script>
+        function saveScrollPosition() {
+            sessionStorage.setItem('scrollPosition', window.scrollY);
+        }
+        window.addEventListener('load', function() {
+            const savedPosition = sessionStorage.getItem('scrollPosition');
+            if (savedPosition) {
+                window.scrollTo(0, parseInt(savedPosition));
+                sessionStorage.removeItem('scrollPosition');
+            }
+        });
+    </script>
 
     <!-- Header -->
     <header class="header" id="header">
