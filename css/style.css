@@ -176,8 +176,6 @@ button {
     font-size: 1rem;
     font-weight: 500;
     padding: var(--space-3) var(--space-5);
-    min-width: 30px;
-    min-height: 30px;
     border-radius: var(--radius-md);
     transition: var(--transition);
     cursor: pointer;
@@ -381,16 +379,16 @@ button {
 /* Language Switcher - Floating Right Side in Header */
 .language-switcher {
     position: fixed;
-    right: 10px;
+    right: 0px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 0;
-    background: transparent;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
+    gap: 8px;
+    background: var(--surface);
+    padding: 12px 10px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     z-index: 1001;
 }
 
@@ -398,23 +396,21 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: auto;
-    height: auto;
-    font-size: 1.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 2.75rem;
     font-weight: 600;
-    color: var(--primary);
+    color: var(--text-secondary);
     text-decoration: none;
-    background: transparent;
-    border-radius: 0;
+    border-radius: var(--radius-md);
     transition: all var(--transition);
     cursor: pointer;
 }
 
 .lang-btn:hover,
 .lang-btn.active {
-    background: transparent;
-    transform: none;
-    color: var(--primary);
+    background: var(--primary-light);
+    transform: scale(1.1);
 }
 
 .lang-divider {
@@ -700,12 +696,13 @@ button {
         background: transparent;
         min-width: auto;
         height: auto;
-        padding: 0;
+        padding: var(--space-2) var(--space-3);
+        font-size: 2.75rem;
     }
     
     .lang-btn:hover,
     .lang-btn.active {
-        background: transparent;
+        background: var(--primary-light);
         color: var(--primary);
     }
     
@@ -1328,49 +1325,12 @@ button {
 .testimonials {
     padding: var(--space-9) 0;
     background: var(--surface);
-    overflow: hidden;
-    position: relative;
 }
 
-.testimonials-slider {
-    display: flex;
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-5);
-    animation: slider 40s linear infinite;
-    width: max-content;
-}
-
-.testimonials::before,
-.testimonials::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 50px;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.testimonials::before {
-    left: 0;
-    background: linear-gradient(to right, var(--surface), transparent);
-}
-
-.testimonials::after {
-    right: 0;
-    background: linear-gradient(to left, var(--surface), transparent);
-}
-
-.testimonials-slider:hover {
-    animation-play-state: paused;
-}
-
-@keyframes slider {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
 }
 
 .testimonial-card {
@@ -1378,9 +1338,6 @@ button {
     padding: var(--space-5);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border);
-    min-width: 350px;
-    max-width: 350px;
-    flex-shrink: 0;
 }
 
 .testimonial-header {
@@ -1403,42 +1360,13 @@ button {
     font-size: 1.25rem;
 }
 
-.testimonial-avatar-img {
-    width: 56px;
-    height: 56px;
-    border-radius: var(--radius-full);
-    object-fit: cover;
-    border: 3px solid var(--primary-light);
-}
-
-.testimonial-info {
-    flex: 1;
-}
-
 .testimonial-info h4 {
     font-size: 1rem;
-    font-weight: 600;
-    margin: 0 0 2px 0;
 }
 
-.testimonial-designation {
-    display: block;
-    font-size: 0.8125rem;
-    color: var(--primary);
-    font-weight: 500;
-}
-
-.testimonial-location {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 0.8125rem;
+.testimonial-info span {
+    font-size: 0.875rem;
     color: var(--text-secondary);
-    margin-top: 2px;
-}
-
-.testimonial-location i {
-    font-size: 0.75rem;
 }
 
 .testimonial-rating {
@@ -1611,74 +1539,6 @@ button {
 
 .policy-card:hover .policy-arrow {
     transform: translateX(5px);
-}
-
-/* ========================================
-   FAQ Section
-   ======================================== */
-.faq {
-    padding: var(--space-9) 0;
-    background: var(--background);
-}
-
-.faq-grid {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-}
-
-.faq-question {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--space-4) var(--space-5);
-    background: transparent;
-    border: none;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    text-align: left;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.faq-question:hover {
-    background: var(--primary-light);
-}
-
-.faq-question i {
-    font-size: 0.875rem;
-    color: var(--primary);
-    transition: transform 0.3s ease;
-}
-
-.faq-item.active .faq-question i {
-    transform: rotate(45deg);
-}
-
-.faq-answer {
-    display: none;
-    padding: 0 var(--space-5) var(--space-4);
-}
-
-.faq-answer p {
-    margin: 0;
-    color: var(--text-secondary);
-    line-height: 1.7;
-}
-
-.faq-item.active .faq-answer {
-    display: block;
 }
 
 /* ========================================
@@ -2334,7 +2194,7 @@ button {
     
     .lang-btn:hover,
     .lang-btn.active {
-        background: transparent;
+        background: var(--primary-light);
     }
 }
     
@@ -2431,10 +2291,6 @@ button {
         right: 0px;
         top: 50%;
         transform: translateY(-50%);
-    }
-    
-    .lang-btn {
-        font-size: 1.75rem;
     }
     
     .hamburger {
@@ -2790,7 +2646,8 @@ button {
     }
     
     .lang-btn {
-        padding: 0;
+        font-size: 2.75rem;
+        padding: var(--space-1);
     }
     
     .hamburger {
@@ -3365,8 +3222,8 @@ a, button, input, select, textarea, label {
 }
 
 a, button {
-    min-width: 30px;
-    min-height: 30px;
+    min-width: 44px;
+    min-height: 44px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -3483,19 +3340,31 @@ button:active {
     }
 }
 
-/* Testimonial responsive */
-@media (max-width: 768px) {
-    .testimonial-card {
-        min-width: 280px;
-        max-width: 280px;
+/* Desktop Navigation Fix */
+@media (min-width: 769px) {
+    .nav-menu {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        background: transparent;
+        transform: none;
+        box-shadow: none;
+        overflow: visible;
     }
     
-    @keyframes slider {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(-100%);
-        }
+    .nav-menu .nav-item {
+        width: auto;
+        border: none;
+    }
+    
+    .nav-link {
+        height: auto;
+        width: auto;
+        padding: 8px 12px;
+    }
+    
+    .hamburger {
+        display: none;
     }
 }
