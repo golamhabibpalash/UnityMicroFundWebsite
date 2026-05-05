@@ -1329,6 +1329,7 @@ button {
     padding: var(--space-9) 0;
     background: var(--surface);
     overflow: hidden;
+    position: relative;
 }
 
 .testimonials-slider {
@@ -1336,6 +1337,27 @@ button {
     gap: var(--space-5);
     animation: slider 40s linear infinite;
     width: max-content;
+}
+
+.testimonials::before,
+.testimonials::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.testimonials::before {
+    left: 0;
+    background: linear-gradient(to right, var(--surface), transparent);
+}
+
+.testimonials::after {
+    right: 0;
+    background: linear-gradient(to left, var(--surface), transparent);
 }
 
 .testimonials-slider:hover {
