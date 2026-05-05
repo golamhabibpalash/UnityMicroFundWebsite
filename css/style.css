@@ -1361,13 +1361,42 @@ button {
     font-size: 1.25rem;
 }
 
-.testimonial-info h4 {
-    font-size: 1rem;
+.testimonial-avatar-img {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    border: 3px solid var(--primary-light);
 }
 
-.testimonial-info span {
-    font-size: 0.875rem;
+.testimonial-info {
+    flex: 1;
+}
+
+.testimonial-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 2px 0;
+}
+
+.testimonial-designation {
+    display: block;
+    font-size: 0.8125rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.testimonial-location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8125rem;
     color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.testimonial-location i {
+    font-size: 0.75rem;
 }
 
 .testimonial-rating {
