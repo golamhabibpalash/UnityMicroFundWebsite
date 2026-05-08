@@ -17,7 +17,153 @@ document.addEventListener('DOMContentLoaded', function() {
     initModal();
     initFooterAccordion();
     initFAQs();
+    initTestimonials();
 });
+
+// ========================================
+// Testimonials - Dynamic CSV Loading
+// ========================================
+async function initTestimonials() {
+    const container = document.getElementById('testimonialsContainer');
+    if (!container) return;
+
+    const csvFile = window.location.pathname.includes('index-bn') 
+        ? 'sources/member/memberSpeechBn.csv' 
+        : 'sources/member/memberSpeech.csv';
+
+    try {
+        const response = await fetch(csvFile);
+        if (!response.ok) throw new Error('Failed to load CSV');
+        
+        const csvText = await response.text();
+        const data = parseCSV(csvText);
+        
+        if (data.length < 2) return;
+        
+        const headers = data[0].map(h => h.toLowerCase().trim());
+        const rows = data.slice(1).filter(row => row.length >= headers.length);
+        
+        generateTestimonialCards(container, rows, headers);
+    } catch (error) {
+        console.error('Error loading testimonials:', error);
+    }
+}
+
+function parseCSV(text) {
+    const result = [];
+    let row = [];
+    let cell = '';
+    let inQuotes = false;
+    
+    for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const nextChar = text[i + 1];
+        
+        if (char === '"') {
+            if (inQuotes && nextChar === '"') {
+                cell += '"';
+                i++;
+            } else {
+                inQuotes = !inQuotes;
+            }
+        } else if (char === ',' && !inQuotes) {
+            row.push(cell.trim());
+            cell = '';
+        } else if ((char === '\n' || char === '\r') && !inQuotes) {
+            if (cell || row.length > 0) {
+                row.push(cell.trim());
+                result.push(row);
+                row = [];
+                cell = '';
+            }
+            if (char === '\r' && nextChar === '\n') i++;
+        } else if (char !== '\r') {
+            cell += char;
+        }
+    }
+    
+    if (cell || row.length > 0) {
+        row.push(cell.trim());
+        result.push(row);
+    }
+    
+    return result;
+}
+
+function generateTestimonialCards(container, rows, headers) {
+    const index = {
+        name: headers.indexOf('member name'),
+        designation: headers.indexOf('designation'),
+        company: headers.indexOf('company'),
+        area: headers.indexOf('area'),
+        image: headers.indexOf('member image'),
+        text: headers.indexOf('member speech text')
+    };
+    
+    rows.forEach(row => {
+        const name = row[index.name] || '';
+        const designation = row[index.designation] || '';
+        const company = row[index.company] || '';
+        const area = row[index.area] || '';
+        const imageFile = row[index.image] || 'default.jpg';
+        const speechText = row[index.text] || '';
+        
+        const imagePath = `sources/member/${imageFile}`;
+        
+        const card = createTestimonialCard({
+            name, designation, company, area, imagePath, speechText
+        });
+        
+        container.appendChild(card);
+    });
+    
+    // Duplicate for infinite scroll effect
+    rows.forEach(row => {
+        const name = row[index.name] || '';
+        const designation = row[index.designation] || '';
+        const company = row[index.company] || '';
+        const area = row[index.area] || '';
+        const imageFile = row[index.image] || 'default.jpg';
+        const speechText = row[index.text] || '';
+        
+        const imagePath = `sources/member/${imageFile}`;
+        
+        const card = createTestimonialCard({
+            name, designation, company, area, imagePath, speechText
+        });
+        
+        container.appendChild(card);
+    });
+}
+
+function createTestimonialCard(data) {
+    const card = document.createElement('div');
+    card.className = 'testimonial-card';
+    card.innerHTML = `
+        <div class="testimonial-top">
+            <img src="${data.imagePath}" alt="${data.name}" class="testimonial-avatar-img" onerror="this.src='https://randomuser.me/api/portraits/men/32.jpg'">
+            <div class="testimonial-info">
+                <h4>${data.name}</h4>
+                <div class="testimonial-detail">
+                    <i class="fas fa-briefcase"></i>
+                    <span>${data.designation}</span>
+                </div>
+                <div class="testimonial-detail">
+                    <i class="fas fa-building"></i>
+                    <span>${data.company}</span>
+                </div>
+                <div class="testimonial-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>${data.area}</span>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-text-wrapper">
+            <p class="testimonial-text">"${data.speechText}"</p>
+        </div>
+    `;
+    return card;
+}
 
 // ========================================
 // Navigation
@@ -102,9 +248,15 @@ function initScrollEffects() {
         });
     }, observerOptions);
     
-    document.querySelectorAll('.value-card, .step, .project-card, .testimonial-card, .policy-card').forEach(el => {
+    document.querySelectorAll('.value-card, .step, .project-card, .policy-card').forEach(el => {
         observer.observe(el);
     });
+    
+    setTimeout(() => {
+        document.querySelectorAll('.testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
+    }, 500);
 }
 
 // ========================================
