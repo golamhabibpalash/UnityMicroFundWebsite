@@ -18,7 +18,53 @@ document.addEventListener('DOMContentLoaded', function() {
     initFooterAccordion();
     initFAQs();
     initTestimonials();
+    initVisitorCounter();
 });
+
+// ========================================
+// Visitor Counter (localStorage)
+// ========================================
+function initVisitorCounter() {
+    const visitorsEl = document.getElementById('totalVisitors');
+    const visitsEl = document.getElementById('totalVisits');
+    
+    if (!visitorsEl && !visitsEl) return;
+    
+    const stats = getVisitorStats();
+    
+    if (visitorsEl) {
+        visitorsEl.textContent = stats.uniqueVisitors.toLocaleString() + '+';
+    }
+    if (visitsEl) {
+        visitsEl.textContent = stats.totalVisits.toLocaleString();
+    }
+}
+
+function getVisitorStats() {
+    const now = new Date();
+    const today = now.toDateString();
+    
+    let stats = JSON.parse(localStorage.getItem('visitorStats')) || {
+        uniqueVisitors: 20,
+        totalVisits: 45,
+        lastVisit: null
+    };
+    
+    const lastVisitDate = stats.lastVisit ? new Date(stats.lastVisit).toDateString() : null;
+    
+    if (lastVisitDate !== today) {
+        stats.uniqueVisitors++;
+        stats.totalVisits++;
+        stats.lastVisit = now.toISOString();
+        localStorage.setItem('visitorStats', JSON.stringify(stats));
+    } else {
+        stats.totalVisits++;
+        stats.lastVisit = now.toISOString();
+        localStorage.setItem('visitorStats', JSON.stringify(stats));
+    }
+    
+    return stats;
+}
 
 // ========================================
 // Testimonials - Dynamic CSV Loading
