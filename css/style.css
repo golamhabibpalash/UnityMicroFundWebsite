@@ -284,7 +284,10 @@ button {
 }
 
 .logo-text {
-    display: none;
+    /* display: none; */
+
+        display: flex;
+        flex-direction: column;
 }
 
 .logo-name {
@@ -521,7 +524,9 @@ button {
 }
 
 .logo-text {
-    display: none;
+    /* display: none; */
+        display: flex;
+        flex-direction: column;
 }
 
 .nav-menu {
